@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/xst"
+elaborate
+-ifn Dzielnik_10.prj
+-ifmt mixed

@@ -1,0 +1,57 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : SPI_Master.vf
+// /___/   /\     Timestamp : 01/23/2022 22:10:53
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family xbr -verilog C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/SPI_Master.vf -w C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/SPI_Master.sch
+//Design Name: SPI_Master
+//Device: xbr
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module SPI_Master(btn0, 
+                  Input_data, 
+                  In_clock, 
+                  MISO, 
+                  MOSI, 
+                  NCS, 
+                  Output_data, 
+                  Out_clock);
+
+    input btn0;
+    input [7:0] Input_data;
+    input In_clock;
+    input MISO;
+   output MOSI;
+   output NCS;
+   output [7:0] Output_data;
+   output Out_clock;
+   
+   wire dzielnikwy;
+   wire Out_clock_DUMMY;
+   
+   assign Out_clock = Out_clock_DUMMY;
+   Dzielnik_10000  XLXI_2 (.in_clock(In_clock), 
+                          .out_clock(dzielnikwy));
+   Register  XLXI_4 (.input_data(Input_data[7:0]), 
+                    .in_clock(Out_clock_DUMMY), 
+                    .MISO(MISO), 
+                    .start(btn0), 
+                    .MOSI(MOSI), 
+                    .output_data(Output_data[7:0]));
+   Automat  XLXI_5 (.in_clock(dzielnikwy), 
+                   .start(btn0), 
+                   .ncs(NCS), 
+                   .out_clock(Out_clock_DUMMY));
+endmodule

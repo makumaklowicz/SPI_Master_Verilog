@@ -1,0 +1,23 @@
+Running: E:\Programy\ISE\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib uni9000_ver -lib aim_ver -lib cpld_ver -lib xilinxcorelib_ver -o C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/SPI_Master_isim_beh.exe -prj C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/SPI_Master_beh.prj work.SPI_Master work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Register.v" into library work
+Analyzing Verilog file "C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Dzielnik_10000.v" into library work
+Analyzing Verilog file "C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Automat.v" into library work
+Analyzing Verilog file "C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/SPI_Master.vf" into library work
+Analyzing Verilog file "E:/Programy/ISE/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module Dzielnik_10000
+Compiling module Register
+Compiling module Automat
+Compiling module SPI_Master
+Compiling module glbl
+Time Resolution for simulation is 1fs.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 5 Verilog Units
+Built simulation executable C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/SPI_Master_isim_beh.exe
+Fuse Memory Usage: 28816 KB
+Fuse CPU Usage: 562 ms

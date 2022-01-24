@@ -1,0 +1,4 @@
+verilog work "Register.v"
+verilog work "Dzielnik_10000.v"
+verilog work "Automat.v"
+verilog work "SPI_Master.vf"

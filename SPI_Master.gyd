@@ -1,0 +1,74 @@
+Pin Freeze File:  version P.20131013
+
+2C256144 XC2C256-6-TQ144
+In_clock S:PIN38
+Input_data<0> S:PIN2
+Input_data<1> S:PIN4
+Input_data<2> S:PIN6
+Input_data<3> S:PIN9
+Input_data<4> S:PIN3
+Input_data<5> S:PIN5
+Input_data<6> S:PIN7
+Input_data<7> S:PIN10
+MISO S:PIN39
+btn0 S:PIN143
+MOSI S:PIN142
+NCS S:PIN139
+Out_clock S:PIN136
+Output_data<0> S:PIN119
+Output_data<1> S:PIN117
+Output_data<2> S:PIN115
+Output_data<3> S:PIN113
+Output_data<4> S:PIN104
+Output_data<5> S:PIN102
+Output_data<6> S:PIN100
+Output_data<7> S:PIN97
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 XLXI_2/counter<9> XLXI_2/counter<8> XLXI_2/counter<13> MOSI
+		 XLXI_2/counter<7> XLXI_2/counter<12> XLXI_2/counter<6> XLXI_2/counter<5>
+		 XLXI_2/counter<4> XLXI_2/counter<3> XLXI_2/counter<2> NCS
+		 XLXI_2/counter<11> XLXI_2/counter<10> XLXI_2/counter<1> XLXI_2/counter<0>
+		
+PARTITION FB2_1 XLXI_4/input_temp<0> XLXI_5/counter<2> XLXI_4/input_temp<4> XLXI_4/input_temp<1>
+		 XLXI_4/input_temp<5> XLXI_5/counter<31> XLXI_5/temp XLXI_5/cs_state2
+		 XLXI_2/counter<14> XLXI_2/counter<15> dzielnikwy XLXI_4/input_temp<2>
+		 XLXI_4/input_temp<6> XLXI_4/input_temp<3> XLXI_4/input_temp<7> XLXI_5/cs_state1
+		
+PARTITION FB3_1 Out_clock XLXI_5/counter<15> XLXI_5/counter<14> XLXI_5/counter<10>
+		 XLXI_5/counter<13> XLXI_5/counter<9> XLXI_5/counter<8> XLXI_5/counter<7>
+		 XLXI_5/counter<6> XLXI_5/counter<5> XLXI_5/counter<4> XLXI_5/counter<3>
+		 XLXI_5/counter<1> XLXI_5/counter<12> XLXI_5/counter<0> XLXI_5/counter<11>
+		
+PARTITION FB4_1 XLXI_5/counter<19> XLXI_5/counter<20> XLXI_5/counter<21> XLXI_5/counter<22>
+		 XLXI_5/counter<23> XLXI_5/counter<24> XLXI_5/counter__add0000<27> N_PZ_261
+		 XLXI_5/counter__add0000<29> XLXI_5/counter__add0000<30> XLXI_5/counter<25> XLXI_5/Mcompar_counter_cmp_ge0000_AGEB5
+		 N_PZ_255 N_PZ_274 XLXI_5/counter<26> XLXI_5/counter<28>
+		
+PARTITION FB5_10 XLXI_5/counter<30> XLXI_5/counter<29> XLXI_5/counter<27> XLXI_5/counter<16>
+		
+PARTITION FB5_15 XLXI_5/counter<17> XLXI_5/counter<18>
+PARTITION FB6_12 XLXI_4/buf_wej
+
+
+
+PARTITION FB9_2 Output_data<3>
+PARTITION FB9_6 Output_data<2>
+PARTITION FB9_13 Output_data<1>
+PARTITION FB9_15 Output_data<0>
+
+PARTITION FB10_6 Output_data<4>
+PARTITION FB10_14 Output_data<5>
+
+
+PARTITION FB12_2 Output_data<6>
+PARTITION FB12_12 Output_data<7>
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+[Inputs]
+in_clock
+start
+[Outputs]
+out_clock
+ncs
+[BiDir]
+[ATTRIBUTES]
+VeriModel Automat
+

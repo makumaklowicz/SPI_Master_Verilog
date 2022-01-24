@@ -1,0 +1,180 @@
+
+----------------------------------------
+|  P a r t i t i o n    S u c c e e d  |
+----------------------------------------
+0 Group(s)
+
+GCLK2: 1=In_clock.p
+----------------- B l o c k 0 ------------------
+PLApt(31/56), Fanin(19/38), Clk(1/3), Bct(1/4), Pin(3/6), Mcell(16/16)
+PLApts[31/56] 86 87 183 184 4 172 182 173 185 174 186 175 187 176 188 177 189 178 190 96 179 191 167 192 168 193 169 194 170 195 () () () () () () () () () () () () () () () () () () () () () () () () () 181
+Fanins[19] Out_clock.n XLXI_2/counter<0>.n XLXI_2/counter<10>.n XLXI_2/counter<11>.n XLXI_2/counter<12>.n XLXI_2/counter<13>.n XLXI_2/counter<1>.n XLXI_2/counter<2>.n XLXI_2/counter<3>.n XLXI_2/counter<4>.n XLXI_2/counter<5>.n XLXI_2/counter<6>.n XLXI_2/counter<7>.n XLXI_2/counter<8>.n XLXI_2/counter<9>.n XLXI_2/counter_cmp_eq0000.n XLXI_4/input_temp<7>.n XLXI_5/cs_state1.n XLXI_5/cs_state2.n
+clk[1] In_clock 
+CTC: (pt=4) Out_clock ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[17] [MOSI(148),MOSI(142)] [NCS(156),NCS(139)] [btn0(143)] [XLXI_2/counter<0>(160)]  
+           [XLXI_2/counter<1>(159)] [XLXI_2/counter<2>(155)] [XLXI_2/counter<3>(154)]  
+           [XLXI_2/counter<4>(153)] [XLXI_2/counter<5>(152)] [XLXI_2/counter<6>(151)]  
+           [XLXI_2/counter<7>(149)] [XLXI_2/counter<8>(146)] [XLXI_2/counter<9>(145)]  
+           [XLXI_2/counter<10>(158)] [XLXI_2/counter<11>(157)] [XLXI_2/counter<12>(150)]  
+           [XLXI_2/counter<13>(147)] 
+Signal[17] [ 0: XLXI_2/counter<9>(145)  ][ 1: XLXI_2/counter<8>(146)  ][ 2: XLXI_2/counter<13>(147)  
+           btn0(143)  ][ 3: MOSI(148) MOSI(142)  ][ 4: XLXI_2/counter<7>(149)  ][ 5: XLXI_2/counter<12>(150)  
+           (140)  ][ 6: XLXI_2/counter<6>(151)  ][ 7: XLXI_2/counter<5>(152)  ][ 8: XLXI_2/counter<4>(153)  ] 
+           [ 9: XLXI_2/counter<3>(154)  ][ 10: XLXI_2/counter<2>(155)  ][ 11: NCS(156) NCS(139)  ][ 12:  
+           XLXI_2/counter<11>(157) (138)  ][ 13: XLXI_2/counter<10>(158) (137)  ][ 14:  
+           XLXI_2/counter<1>(159)  ][ 15: XLXI_2/counter<0>(160)  ]
+----------------- B l o c k 1 ------------------
+PLApt(20/56), Fanin(29/38), Clk(1/3), Bct(1/4), Pin(8/8), Mcell(16/16)
+PLApts[20/41] 180 197 171 196 2 98 99 128 163 125 97 199 127 13 131 () 100 () () () () () () () () 13 () () 13 () () 13 () () () () () () () () 97
+Fanins[29] NCS.n N_PZ_274.n XLXI_2/counter<0>.n XLXI_2/counter<10>.n XLXI_2/counter<11>.n XLXI_2/counter<12>.n XLXI_2/counter<13>.n XLXI_2/counter<14>.n XLXI_2/counter<15>.n XLXI_2/counter<1>.n XLXI_2/counter<2>.n XLXI_2/counter<3>.n XLXI_2/counter<4>.n XLXI_2/counter<5>.n XLXI_2/counter<6>.n XLXI_2/counter<7>.n XLXI_2/counter<8>.n XLXI_2/counter<9>.n XLXI_2/counter_cmp_eq0000.n XLXI_5/Mcompar_counter_cmp_ge0000_AGEB5.n XLXI_5/counter<0>.n XLXI_5/counter<1>.n XLXI_5/counter<2>.n XLXI_5/counter<31>.n XLXI_5/counter_0__or0000.n XLXI_5/counter_and0000.n XLXI_5/temp.n dzielnikwy.n btn0.p
+clk[1] In_clock 
+CTC: (pt=2) btn0 ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[27] [XLXI_2/counter_cmp_eq0000(161),XLXI_4/input_temp<0>,Input_data<0>(2)]  
+           [XLXI_5/counter_0__or0000(164),XLXI_4/input_temp<1>,Input_data<1>(4)]  
+           [XLXI_4/input_temp<2>,Input_data<2>(6)] [XLXI_4/input_temp<3>,Input_data<3>(9)]  
+           [XLXI_5/counter_and0000(163),XLXI_4/input_temp<4>,Input_data<4>(3)]  
+           [XLXI_4/input_temp<5>,Input_data<5>(5)] [XLXI_4/input_temp<6>,Input_data<6>(7)]  
+           [XLXI_4/input_temp<7>,Input_data<7>(10)] [XLXI_5/cs_state1(176)] [dzielnikwy(171)]  
+           [XLXI_2/counter<15>(170)] [XLXI_2/counter<14>(169)] [XLXI_5/cs_state2(168)] [XLXI_5/temp(167)]  
+           [XLXI_5/counter<31>(166)] [XLXI_5/counter<2>(162)] 
+Signal[27] [ 0: XLXI_2/counter_cmp_eq0000(161) XLXI_4/input_temp<0>(161) Input_data<0>(2)  ][ 1:  
+           XLXI_5/counter<2>(162)  ][ 2: XLXI_5/counter_and0000(163) XLXI_4/input_temp<4>(163)  
+           Input_data<4>(3)  ][ 3: XLXI_5/counter_0__or0000(164) XLXI_4/input_temp<1>(164) Input_data<1>(4)  
+            ][ 4: XLXI_4/input_temp<5>(165) Input_data<5>(5)  ][ 5: XLXI_5/counter<31>(166)  ][ 6:  
+           XLXI_5/temp(167)  ][ 7: XLXI_5/cs_state2(168)  ][ 8: XLXI_2/counter<14>(169)  ][ 9:  
+           XLXI_2/counter<15>(170)  ][ 10: dzielnikwy(171)  ][ 11: XLXI_4/input_temp<2>(172)  
+           Input_data<2>(6)  ][ 12: XLXI_4/input_temp<6>(173) Input_data<6>(7)  ][ 13:  
+           XLXI_4/input_temp<3>(174) Input_data<3>(9)  ][ 14: XLXI_4/input_temp<7>(175) Input_data<7>(10)  ] 
+           [ 15: XLXI_5/cs_state1(176)  ]
+----------------- B l o c k 2 ------------------
+PLApt(32/56), Fanin(20/38), Clk(0/3), Bct(1/4), Pin(1/6), Mcell(16/16)
+PLApts[32/32] 130 164 126 129 13 118 132 119 133 120 71 134 121 135 122 136 123 137 124 138 101 139 102 140 103 141 104 142 105 143 106 144
+Fanins[20] XLXI_5/counter<0>.n XLXI_5/counter<10>.n XLXI_5/counter<11>.n XLXI_5/counter<12>.n XLXI_5/counter<13>.n XLXI_5/counter<14>.n XLXI_5/counter<15>.n XLXI_5/counter<1>.n XLXI_5/counter<2>.n XLXI_5/counter<3>.n XLXI_5/counter<4>.n XLXI_5/counter<5>.n XLXI_5/counter<6>.n XLXI_5/counter<7>.n XLXI_5/counter<8>.n XLXI_5/counter<9>.n XLXI_5/counter_0__or0000.n XLXI_5/counter_and0000.n XLXI_5/temp.n dzielnikwy.n
+clk[0] 
+CTC: (pt=13) dzielnikwy ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[16] [Out_clock(177),Out_clock(136)] [XLXI_5/counter<0>(191)] [XLXI_5/counter<1>(189)]  
+           [XLXI_5/counter<3>(188)] [XLXI_5/counter<4>(187)] [XLXI_5/counter<5>(186)]  
+           [XLXI_5/counter<6>(185)] [XLXI_5/counter<7>(184)] [XLXI_5/counter<8>(183)]  
+           [XLXI_5/counter<9>(182)] [XLXI_5/counter<10>(180)] [XLXI_5/counter<11>(192)]  
+           [XLXI_5/counter<12>(190)] [XLXI_5/counter<13>(181)] [XLXI_5/counter<14>(179)]  
+           [XLXI_5/counter<15>(178)] 
+Signal[16] [ 0: Out_clock(177) Out_clock(136)  ][ 1: XLXI_5/counter<15>(178) (135)  ][ 2:  
+           XLXI_5/counter<14>(179) (134)  ][ 3: XLXI_5/counter<10>(180)  ][ 4: XLXI_5/counter<13>(181) (133)  
+            ][ 5: XLXI_5/counter<9>(182)  ][ 6: XLXI_5/counter<8>(183)  ][ 7: XLXI_5/counter<7>(184)  ][ 8:  
+           XLXI_5/counter<6>(185)  ][ 9: XLXI_5/counter<5>(186)  ][ 10: XLXI_5/counter<4>(187)  ][ 11:  
+           XLXI_5/counter<3>(188)  ][ 12: XLXI_5/counter<1>(189)  ][ 13: XLXI_5/counter<12>(190) (132)  ] 
+           [ 14: XLXI_5/counter<0>(191)  ][ 15: XLXI_5/counter<11>(192) (131)  ]
+----------------- B l o c k 3 ------------------
+PLApt(34/56), Fanin(36/38), Clk(0/3), Bct(1/4), Pin(0/8), Mcell(16/16)
+PLApts[34/50] 156 160 198 117 13 155 32 78 116 154 81 82 80 84 165 33 74 77 115 153 114 152 113 151 112 150 111 149 14 110 148 () () () () () () 34 () () () () () 70 () () () () () 67
+Fanins[36] N_PZ_255.n N_PZ_261.n XLXI_5/counter<0>.n XLXI_5/counter<10>.n XLXI_5/counter<11>.n XLXI_5/counter<12>.n XLXI_5/counter<13>.n XLXI_5/counter<14>.n XLXI_5/counter<15>.n XLXI_5/counter<16>.n XLXI_5/counter<17>.n XLXI_5/counter<18>.n XLXI_5/counter<19>.n XLXI_5/counter<1>.n XLXI_5/counter<20>.n XLXI_5/counter<21>.n XLXI_5/counter<22>.n XLXI_5/counter<23>.n XLXI_5/counter<24>.n XLXI_5/counter<25>.n XLXI_5/counter<26>.n XLXI_5/counter<27>.n XLXI_5/counter<28>.n XLXI_5/counter<29>.n XLXI_5/counter<2>.n XLXI_5/counter<30>.n XLXI_5/counter<3>.n XLXI_5/counter<4>.n XLXI_5/counter<5>.n XLXI_5/counter<6>.n XLXI_5/counter<7>.n XLXI_5/counter<8>.n XLXI_5/counter<9>.n XLXI_5/counter_0__or0000.n XLXI_5/counter_and0000.n dzielnikwy.n
+clk[0] 
+CTC: (pt=13) dzielnikwy ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[16] [XLXI_5/counter<28>(208)] [XLXI_5/counter<26>(207)] [N_PZ_255(205)] [XLXI_5/counter<25>(203)]  
+           [XLXI_5/counter__add0000<30>(202)] [XLXI_5/counter__add0000<29>(201)] [N_PZ_261(200)]  
+           [XLXI_5/counter__add0000<27>(199)] [N_PZ_274(206)] [XLXI_5/Mcompar_counter_cmp_ge0000_AGEB5(204)]  
+           [XLXI_5/counter<24>(198)] [XLXI_5/counter<23>(197)] [XLXI_5/counter<22>(196)]  
+           [XLXI_5/counter<21>(195)] [XLXI_5/counter<20>(194)] [XLXI_5/counter<19>(193)] 
+Signal[16] [ 0: XLXI_5/counter<19>(193) (11)  ][ 1: XLXI_5/counter<20>(194) (12)  ][ 2:  
+           XLXI_5/counter<21>(195) (13)  ][ 3: XLXI_5/counter<22>(196) (14)  ][ 4: XLXI_5/counter<23>(197)  
+           (15)  ][ 5: XLXI_5/counter<24>(198) (16)  ][ 6: XLXI_5/counter__add0000<27>(199)  ][ 7:  
+           N_PZ_261(200)  ][ 8: XLXI_5/counter__add0000<29>(201)  ][ 9: XLXI_5/counter__add0000<30>(202)  ] 
+           [ 10: XLXI_5/counter<25>(203)  ][ 11: XLXI_5/Mcompar_counter_cmp_ge0000_AGEB5(204) (17)  ][ 12:  
+           N_PZ_255(205)  ][ 13: N_PZ_274(206) (18)  ][ 14: XLXI_5/counter<26>(207)  ][ 15:  
+           XLXI_5/counter<28>(208)  ]
+----------------- B l o c k 4 ------------------
+PLApt(13/56), Fanin(28/38), Clk(0/3), Bct(1/4), Pin(0/5), Mcell(6/16)
+PLApts[13/13] 109 147 108 146 13 107 145 157 159 161 166 158 162
+Fanins[28] XLXI_5/counter<0>.n XLXI_5/counter<10>.n XLXI_5/counter<11>.n XLXI_5/counter<12>.n XLXI_5/counter<13>.n XLXI_5/counter<14>.n XLXI_5/counter<15>.n XLXI_5/counter<16>.n XLXI_5/counter<17>.n XLXI_5/counter<18>.n XLXI_5/counter<1>.n XLXI_5/counter<27>.n XLXI_5/counter<29>.n XLXI_5/counter<2>.n XLXI_5/counter<30>.n XLXI_5/counter<3>.n XLXI_5/counter<4>.n XLXI_5/counter<5>.n XLXI_5/counter<6>.n XLXI_5/counter<7>.n XLXI_5/counter<8>.n XLXI_5/counter<9>.n XLXI_5/counter_0__or0000.n XLXI_5/counter__add0000<27>.n XLXI_5/counter__add0000<29>.n XLXI_5/counter__add0000<30>.n XLXI_5/counter_and0000.n dzielnikwy.n
+clk[0] 
+CTC: (pt=13) dzielnikwy ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 6] [XLXI_5/counter<18>(224)] [XLXI_5/counter<17>(223)] [XLXI_5/counter<16>(221)]  
+           [XLXI_5/counter<27>(220)] [XLXI_5/counter<29>(219)] [XLXI_5/counter<30>(218)] 
+Signal[ 6] [ 0:  ][ 1: (33)  ][ 2:  ][ 3: (32)  ][ 4: (31)  ][ 5: (30)  ][ 6:  ][ 7:  ][ 8:  ][ 9:  
+           XLXI_5/counter<30>(218)  ][ 10: XLXI_5/counter<29>(219)  ][ 11: XLXI_5/counter<27>(220)  ][ 12:  
+           XLXI_5/counter<16>(221)  ][ 13: (28)  ][ 14: XLXI_5/counter<17>(223)  ][ 15:  
+           XLXI_5/counter<18>(224)  ]
+----------------- B l o c k 5 ------------------
+PLApt(1/56), Fanin(1/38), Clk(0/3), Bct(1/4), Pin(2/8), Mcell(1/16)
+PLApts[1/5] () () () () 4
+Fanins[ 1] Out_clock.n
+clk[0] 
+CTC: (pt=4) Out_clock ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 3] [In_clock(38)] [XLXI_4/buf_wej,MISO(39)] 
+Signal[ 3] [ 0: (34)  ][ 1: (35)  ][ 2:  ][ 3: In_clock(38)  ][ 4:  ][ 5:  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ] 
+           [ 10:  ][ 11: XLXI_4/buf_wej(236) MISO(39)  ][ 12: (40)  ][ 13: (41)  ][ 14: (42)  ][ 15: (43)  ]
+----------------- B l o c k 6 ------------------
+----------------- B l o c k 7 ------------------
+----------------- B l o c k 8 ------------------
+PLApt(5/56), Fanin(5/38), Clk(0/3), Bct(1/4), Pin(4/8), Mcell(4/16)
+PLApts[5/53] () () () () 4 () () () () () () () () 91 () () () () () () () () () () () 90 () () () () () () () () () () () () () () () () () () () () 89 () () () () () 88
+Fanins[ 5] Out_clock.n XLXI_4/buf_wej.n XLXI_4/input_temp<0>.n XLXI_4/input_temp<1>.n XLXI_4/input_temp<2>.n
+clk[0] 
+CTC: (pt=4) Out_clock ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 4] [Output_data<0>(287),Output_data<0>(119)] [Output_data<1>(285),Output_data<1>(117)]  
+           [Output_data<2>(278),Output_data<2>(115)] [Output_data<3>(274),Output_data<3>(113)] 
+Signal[ 4] [ 0: (112)  ][ 1: Output_data<3>(274) Output_data<3>(113)  ][ 2:  ][ 3: (114)  ][ 4:  ][ 5:  
+           Output_data<2>(278) Output_data<2>(115)  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ][ 10:  ][ 11: (116)  ][ 12:  
+           Output_data<1>(285) Output_data<1>(117)  ][ 13: (118)  ][ 14: Output_data<0>(287)  
+           Output_data<0>(119)  ][ 15:  ]
+----------------- B l o c k 9 ------------------
+PLApt(3/56), Fanin(3/38), Clk(0/3), Bct(1/4), Pin(2/9), Mcell(2/16)
+PLApts[3/50] () () () () 4 () () () () () () () () () () () () () () () () () () () () 92 () () () () () () () () () () () () () () () () () () () () () () () 93
+Fanins[ 3] Out_clock.n XLXI_4/input_temp<3>.n XLXI_4/input_temp<4>.n
+clk[0] 
+CTC: (pt=4) Out_clock ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 2] [Output_data<4>(294),Output_data<4>(104)] [Output_data<5>(302),Output_data<5>(102)] 
+Signal[ 2] [ 0: (111)  ][ 1: (110)  ][ 2: (107)  ][ 3: (106)  ][ 4: (105)  ][ 5: Output_data<4>(294)  
+           Output_data<4>(104)  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ][ 10:  ][ 11: (103)  ][ 12:  ][ 13:  
+           Output_data<5>(302) Output_data<5>(102)  ][ 14:  ][ 15: (101)  ]
+----------------- B l o c k 10 ------------------
+----------------- B l o c k 11 ------------------
+PLApt(3/56), Fanin(3/38), Clk(0/3), Bct(1/4), Pin(2/6), Mcell(2/16)
+PLApts[3/44] () () () () 4 () () () () () () () () 94 () () () () () () () () () () () () () () () () () () () () () () () () () () () () () 95
+Fanins[ 3] Out_clock.n XLXI_4/input_temp<5>.n XLXI_4/input_temp<6>.n
+clk[0] 
+CTC: (pt=4) Out_clock ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 2] [Output_data<6>(322),Output_data<6>(100)] [Output_data<7>(332),Output_data<7>(97)] 
+Signal[ 2] [ 0:  ][ 1: Output_data<6>(322) Output_data<6>(100)  ][ 2:  ][ 3:  ][ 4:  ][ 5:  ][ 6:  ][ 7:  ] 
+           [ 8:  ][ 9:  ][ 10: (98)  ][ 11: Output_data<7>(332) Output_data<7>(97)  ][ 12: (96)  ][ 13: (95)  
+            ][ 14: (94)  ][ 15:  ]
+----------------- B l o c k 12 ------------------
+----------------- B l o c k 13 ------------------
+----------------- B l o c k 14 ------------------
+----------------- B l o c k 15 ------------------

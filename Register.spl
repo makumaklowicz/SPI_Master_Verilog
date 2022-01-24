@@ -1,0 +1,12 @@
+[Inputs]
+start
+in_clock
+MISO
+=input_data[7:0]=
+[Outputs]
+MOSI
+=output_data[7:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel Register
+

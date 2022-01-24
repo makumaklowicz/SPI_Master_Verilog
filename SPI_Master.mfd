@@ -1,0 +1,1162 @@
+MDF Database:  version 1.0
+MDF_INFO | SPI_Master | XC2C256-6-TQ144
+MACROCELL | 0 | 3 | MOSI_MC
+ATTRIBUTES | 142869250 | 0
+INPUTS | 1 | XLXI_4/input_temp<7>
+INPUTMC | 1 | 1 | 14
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   MOSI := XLXI_4/input_temp<7>;	// (1 pt, 1 inp)
+    MOSI.CLK = !(Out_clock);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 14 | XLXI_4/input_temp<7>_MC
+ATTRIBUTES | 2290089984 | 4
+OUTPUTMC | 1 | 0 | 3
+INPUTS | 0 
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   
+// Direct Input Register
+XLXI_4/input_temp<7> := Input_data<7>;	// (0 pt, 0 inp)
+    XLXI_4/input_temp<7>.CLK = !(btn0);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 0 | Out_clock_MC
+ATTRIBUTES | 2151940898 | 8
+INPUTS | 2 | dzielnikwy  | XLXI_5/temp
+INPUTMC | 2 | 1 | 10 | 1 | 6
+EQ | 2 | 
+   !Out_clock.T := Gnd;	// (0 pt, 0 inp)
+    Out_clock.DEC = !(dzielnikwy & XLXI_5/temp);	// PTC	(1 pt, 2 inp)
+
+MACROCELL | 1 | 10 | dzielnikwy_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 5 | 1 | 6 | 2 | 0 | 1 | 1 | 1 | 5 | 1 | 7
+INPUTS | 16 | XLXI_2/counter<0>  | XLXI_2/counter<10>  | XLXI_2/counter<1>  | XLXI_2/counter<2>  | XLXI_2/counter<3>  | XLXI_2/counter<4>  | XLXI_2/counter<5>  | XLXI_2/counter<6>  | XLXI_2/counter<7>  | XLXI_2/counter<8>  | XLXI_2/counter<9>  | XLXI_2/counter<11>  | XLXI_2/counter<12>  | XLXI_2/counter<13>  | XLXI_2/counter<14>  | XLXI_2/counter<15>
+INPUTMC | 16 | 0 | 15 | 0 | 13 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9
+EQ | 7 | 
+   dzielnikwy.T := XLXI_2/counter<0> & !XLXI_2/counter<10> & 
+	XLXI_2/counter<1> & XLXI_2/counter<2> & XLXI_2/counter<3> & 
+	!XLXI_2/counter<4> & !XLXI_2/counter<5> & XLXI_2/counter<6> & 
+	!XLXI_2/counter<7> & XLXI_2/counter<8> & XLXI_2/counter<9> & 
+	!XLXI_2/counter<11> & !XLXI_2/counter<12> & !XLXI_2/counter<13> & 
+	XLXI_2/counter<14> & XLXI_2/counter<15>;	// (1 pt, 16 inp)
+   dzielnikwy.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 0 | 15 | XLXI_2/counter<0>_MC
+ATTRIBUTES | 2155905796 | 0
+OUTPUTMC | 18 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9 | 1 | 10 | 1 | 0
+INPUTS | 2 | XLXI_2/counter<0>  | XLXI_4/input_temp<0>.COMB
+INPUTMC | 2 | 0 | 15 | 1 | 0
+EQ | 2 | 
+   !XLXI_2/counter<0> := XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB;	// (1 pt, 2 inp)
+   XLXI_2/counter<0>.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 1 | 0 | XLXI_4/input_temp<0>_MC
+ATTRIBUTES | 679478016 | 5
+OUTPUTMC | 17 | 8 | 12 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9
+INPUTS | 16 | XLXI_2/counter<0>  | XLXI_2/counter<10>  | XLXI_2/counter<1>  | XLXI_2/counter<2>  | XLXI_2/counter<3>  | XLXI_2/counter<4>  | XLXI_2/counter<5>  | XLXI_2/counter<6>  | XLXI_2/counter<7>  | XLXI_2/counter<8>  | XLXI_2/counter<9>  | XLXI_2/counter<11>  | XLXI_2/counter<12>  | XLXI_2/counter<13>  | XLXI_2/counter<14>  | XLXI_2/counter<15>
+INPUTMC | 16 | 0 | 15 | 0 | 13 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9
+LCT | 1 | 2 | Internal_Name
+EQ | 9 | 
+   XLXI_4/input_temp<0>.COMB =  XLXI_2/counter<0> & !XLXI_2/counter<10> & 
+	XLXI_2/counter<1> & XLXI_2/counter<2> & XLXI_2/counter<3> & 
+	!XLXI_2/counter<4> & !XLXI_2/counter<5> & XLXI_2/counter<6> & 
+	!XLXI_2/counter<7> & XLXI_2/counter<8> & XLXI_2/counter<9> & 
+	!XLXI_2/counter<11> & !XLXI_2/counter<12> & !XLXI_2/counter<13> & 
+	XLXI_2/counter<14> & XLXI_2/counter<15>;	// (1 pt, 16 inp)
+// Direct Input Register
+XLXI_4/input_temp<0> := Input_data<0>;	// (0 pt, 0 inp)
+    XLXI_4/input_temp<0>.CLK = !(btn0);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 13 | XLXI_2/counter<10>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 8 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9 | 1 | 10 | 1 | 0
+INPUTS | 12 | XLXI_4/input_temp<0>.COMB  | XLXI_2/counter<10>  | XLXI_2/counter<0>  | XLXI_2/counter<1>  | XLXI_2/counter<2>  | XLXI_2/counter<3>  | XLXI_2/counter<4>  | XLXI_2/counter<5>  | XLXI_2/counter<6>  | XLXI_2/counter<7>  | XLXI_2/counter<8>  | XLXI_2/counter<9>
+INPUTMC | 12 | 1 | 0 | 0 | 13 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0
+EQ | 6 | 
+   XLXI_2/counter<10>.T := XLXI_4/input_temp<0>.COMB & XLXI_2/counter<10>
+	# XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB & 
+	XLXI_2/counter<1> & XLXI_2/counter<2> & XLXI_2/counter<3> & 
+	XLXI_2/counter<4> & XLXI_2/counter<5> & XLXI_2/counter<6> & 
+	XLXI_2/counter<7> & XLXI_2/counter<8> & XLXI_2/counter<9>;	// (2 pt, 12 inp)
+   XLXI_2/counter<10>.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 0 | 14 | XLXI_2/counter<1>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 17 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9 | 1 | 10 | 1 | 0
+INPUTS | 3 | XLXI_2/counter<0>  | XLXI_4/input_temp<0>.COMB  | XLXI_2/counter<1>
+INPUTMC | 3 | 0 | 15 | 1 | 0 | 0 | 14
+EQ | 5 | 
+   XLXI_2/counter<1> := XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB & 
+	!XLXI_2/counter<1>
+	# !XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB & 
+	XLXI_2/counter<1>;	// (2 pt, 3 inp)
+   XLXI_2/counter<1>.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 0 | 10 | XLXI_2/counter<2>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 16 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9 | 1 | 10 | 1 | 0
+INPUTS | 4 | XLXI_4/input_temp<0>.COMB  | XLXI_2/counter<2>  | XLXI_2/counter<0>  | XLXI_2/counter<1>
+INPUTMC | 4 | 1 | 0 | 0 | 10 | 0 | 15 | 0 | 14
+EQ | 4 | 
+   XLXI_2/counter<2>.T := XLXI_4/input_temp<0>.COMB & XLXI_2/counter<2>
+	# XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB & 
+	XLXI_2/counter<1>;	// (2 pt, 4 inp)
+   XLXI_2/counter<2>.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 0 | 9 | XLXI_2/counter<3>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 15 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9 | 1 | 10 | 1 | 0
+INPUTS | 5 | XLXI_4/input_temp<0>.COMB  | XLXI_2/counter<3>  | XLXI_2/counter<0>  | XLXI_2/counter<1>  | XLXI_2/counter<2>
+INPUTMC | 5 | 1 | 0 | 0 | 9 | 0 | 15 | 0 | 14 | 0 | 10
+EQ | 4 | 
+   XLXI_2/counter<3>.T := XLXI_4/input_temp<0>.COMB & XLXI_2/counter<3>
+	# XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB & 
+	XLXI_2/counter<1> & XLXI_2/counter<2>;	// (2 pt, 5 inp)
+   XLXI_2/counter<3>.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 0 | 8 | XLXI_2/counter<4>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 14 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9 | 1 | 10 | 1 | 0
+INPUTS | 6 | XLXI_4/input_temp<0>.COMB  | XLXI_2/counter<4>  | XLXI_2/counter<0>  | XLXI_2/counter<1>  | XLXI_2/counter<2>  | XLXI_2/counter<3>
+INPUTMC | 6 | 1 | 0 | 0 | 8 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9
+EQ | 4 | 
+   XLXI_2/counter<4>.T := XLXI_4/input_temp<0>.COMB & XLXI_2/counter<4>
+	# XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB & 
+	XLXI_2/counter<1> & XLXI_2/counter<2> & XLXI_2/counter<3>;	// (2 pt, 6 inp)
+   XLXI_2/counter<4>.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 0 | 7 | XLXI_2/counter<5>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 13 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9 | 1 | 10 | 1 | 0
+INPUTS | 7 | XLXI_4/input_temp<0>.COMB  | XLXI_2/counter<5>  | XLXI_2/counter<0>  | XLXI_2/counter<1>  | XLXI_2/counter<2>  | XLXI_2/counter<3>  | XLXI_2/counter<4>
+INPUTMC | 7 | 1 | 0 | 0 | 7 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8
+EQ | 5 | 
+   XLXI_2/counter<5>.T := XLXI_4/input_temp<0>.COMB & XLXI_2/counter<5>
+	# XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB & 
+	XLXI_2/counter<1> & XLXI_2/counter<2> & XLXI_2/counter<3> & 
+	XLXI_2/counter<4>;	// (2 pt, 7 inp)
+   XLXI_2/counter<5>.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 0 | 6 | XLXI_2/counter<6>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 12 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9 | 1 | 10 | 1 | 0
+INPUTS | 8 | XLXI_4/input_temp<0>.COMB  | XLXI_2/counter<6>  | XLXI_2/counter<0>  | XLXI_2/counter<1>  | XLXI_2/counter<2>  | XLXI_2/counter<3>  | XLXI_2/counter<4>  | XLXI_2/counter<5>
+INPUTMC | 8 | 1 | 0 | 0 | 6 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7
+EQ | 5 | 
+   XLXI_2/counter<6>.T := XLXI_4/input_temp<0>.COMB & XLXI_2/counter<6>
+	# XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB & 
+	XLXI_2/counter<1> & XLXI_2/counter<2> & XLXI_2/counter<3> & 
+	XLXI_2/counter<4> & XLXI_2/counter<5>;	// (2 pt, 8 inp)
+   XLXI_2/counter<6>.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 0 | 4 | XLXI_2/counter<7>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 11 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9 | 1 | 10 | 1 | 0
+INPUTS | 9 | XLXI_4/input_temp<0>.COMB  | XLXI_2/counter<7>  | XLXI_2/counter<0>  | XLXI_2/counter<1>  | XLXI_2/counter<2>  | XLXI_2/counter<3>  | XLXI_2/counter<4>  | XLXI_2/counter<5>  | XLXI_2/counter<6>
+INPUTMC | 9 | 1 | 0 | 0 | 4 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6
+EQ | 5 | 
+   XLXI_2/counter<7>.T := XLXI_4/input_temp<0>.COMB & XLXI_2/counter<7>
+	# XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB & 
+	XLXI_2/counter<1> & XLXI_2/counter<2> & XLXI_2/counter<3> & 
+	XLXI_2/counter<4> & XLXI_2/counter<5> & XLXI_2/counter<6>;	// (2 pt, 9 inp)
+   XLXI_2/counter<7>.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 0 | 1 | XLXI_2/counter<8>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 10 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9 | 1 | 10 | 1 | 0
+INPUTS | 10 | XLXI_4/input_temp<0>.COMB  | XLXI_2/counter<8>  | XLXI_2/counter<0>  | XLXI_2/counter<1>  | XLXI_2/counter<2>  | XLXI_2/counter<3>  | XLXI_2/counter<4>  | XLXI_2/counter<5>  | XLXI_2/counter<6>  | XLXI_2/counter<7>
+INPUTMC | 10 | 1 | 0 | 0 | 1 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4
+EQ | 6 | 
+   XLXI_2/counter<8>.T := XLXI_4/input_temp<0>.COMB & XLXI_2/counter<8>
+	# XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB & 
+	XLXI_2/counter<1> & XLXI_2/counter<2> & XLXI_2/counter<3> & 
+	XLXI_2/counter<4> & XLXI_2/counter<5> & XLXI_2/counter<6> & 
+	XLXI_2/counter<7>;	// (2 pt, 10 inp)
+   XLXI_2/counter<8>.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 0 | 0 | XLXI_2/counter<9>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 9 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9 | 1 | 10 | 1 | 0
+INPUTS | 11 | XLXI_4/input_temp<0>.COMB  | XLXI_2/counter<9>  | XLXI_2/counter<0>  | XLXI_2/counter<1>  | XLXI_2/counter<2>  | XLXI_2/counter<3>  | XLXI_2/counter<4>  | XLXI_2/counter<5>  | XLXI_2/counter<6>  | XLXI_2/counter<7>  | XLXI_2/counter<8>
+INPUTMC | 11 | 1 | 0 | 0 | 0 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1
+EQ | 6 | 
+   XLXI_2/counter<9>.T := XLXI_4/input_temp<0>.COMB & XLXI_2/counter<9>
+	# XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB & 
+	XLXI_2/counter<1> & XLXI_2/counter<2> & XLXI_2/counter<3> & 
+	XLXI_2/counter<4> & XLXI_2/counter<5> & XLXI_2/counter<6> & 
+	XLXI_2/counter<7> & XLXI_2/counter<8>;	// (2 pt, 11 inp)
+   XLXI_2/counter<9>.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 0 | 12 | XLXI_2/counter<11>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 7 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9 | 1 | 10 | 1 | 0
+INPUTS | 13 | XLXI_4/input_temp<0>.COMB  | XLXI_2/counter<11>  | XLXI_2/counter<0>  | XLXI_2/counter<10>  | XLXI_2/counter<1>  | XLXI_2/counter<2>  | XLXI_2/counter<3>  | XLXI_2/counter<4>  | XLXI_2/counter<5>  | XLXI_2/counter<6>  | XLXI_2/counter<7>  | XLXI_2/counter<8>  | XLXI_2/counter<9>
+INPUTMC | 13 | 1 | 0 | 0 | 12 | 0 | 15 | 0 | 13 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0
+EQ | 7 | 
+   XLXI_2/counter<11>.T := XLXI_4/input_temp<0>.COMB & XLXI_2/counter<11>
+	# XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB & 
+	XLXI_2/counter<10> & XLXI_2/counter<1> & XLXI_2/counter<2> & 
+	XLXI_2/counter<3> & XLXI_2/counter<4> & XLXI_2/counter<5> & 
+	XLXI_2/counter<6> & XLXI_2/counter<7> & XLXI_2/counter<8> & 
+	XLXI_2/counter<9>;	// (2 pt, 13 inp)
+   XLXI_2/counter<11>.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 0 | 5 | XLXI_2/counter<12>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 6 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9 | 1 | 10 | 1 | 0
+INPUTS | 14 | XLXI_4/input_temp<0>.COMB  | XLXI_2/counter<12>  | XLXI_2/counter<0>  | XLXI_2/counter<10>  | XLXI_2/counter<1>  | XLXI_2/counter<2>  | XLXI_2/counter<3>  | XLXI_2/counter<4>  | XLXI_2/counter<5>  | XLXI_2/counter<6>  | XLXI_2/counter<7>  | XLXI_2/counter<8>  | XLXI_2/counter<9>  | XLXI_2/counter<11>
+INPUTMC | 14 | 1 | 0 | 0 | 5 | 0 | 15 | 0 | 13 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 12
+EQ | 7 | 
+   XLXI_2/counter<12>.T := XLXI_4/input_temp<0>.COMB & XLXI_2/counter<12>
+	# XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB & 
+	XLXI_2/counter<10> & XLXI_2/counter<1> & XLXI_2/counter<2> & 
+	XLXI_2/counter<3> & XLXI_2/counter<4> & XLXI_2/counter<5> & 
+	XLXI_2/counter<6> & XLXI_2/counter<7> & XLXI_2/counter<8> & 
+	XLXI_2/counter<9> & XLXI_2/counter<11>;	// (2 pt, 14 inp)
+   XLXI_2/counter<12>.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 0 | 2 | XLXI_2/counter<13>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 5 | 0 | 2 | 1 | 8 | 1 | 9 | 1 | 10 | 1 | 0
+INPUTS | 15 | XLXI_4/input_temp<0>.COMB  | XLXI_2/counter<13>  | XLXI_2/counter<0>  | XLXI_2/counter<10>  | XLXI_2/counter<1>  | XLXI_2/counter<2>  | XLXI_2/counter<3>  | XLXI_2/counter<4>  | XLXI_2/counter<5>  | XLXI_2/counter<6>  | XLXI_2/counter<7>  | XLXI_2/counter<8>  | XLXI_2/counter<9>  | XLXI_2/counter<11>  | XLXI_2/counter<12>
+INPUTMC | 15 | 1 | 0 | 0 | 2 | 0 | 15 | 0 | 13 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 12 | 0 | 5
+EQ | 7 | 
+   XLXI_2/counter<13>.T := XLXI_4/input_temp<0>.COMB & XLXI_2/counter<13>
+	# XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB & 
+	XLXI_2/counter<10> & XLXI_2/counter<1> & XLXI_2/counter<2> & 
+	XLXI_2/counter<3> & XLXI_2/counter<4> & XLXI_2/counter<5> & 
+	XLXI_2/counter<6> & XLXI_2/counter<7> & XLXI_2/counter<8> & 
+	XLXI_2/counter<9> & XLXI_2/counter<11> & XLXI_2/counter<12>;	// (2 pt, 15 inp)
+   XLXI_2/counter<13>.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 1 | 8 | XLXI_2/counter<14>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 4 | 1 | 8 | 1 | 9 | 1 | 10 | 1 | 0
+INPUTS | 16 | XLXI_4/input_temp<0>.COMB  | XLXI_2/counter<14>  | XLXI_2/counter<0>  | XLXI_2/counter<10>  | XLXI_2/counter<1>  | XLXI_2/counter<2>  | XLXI_2/counter<3>  | XLXI_2/counter<4>  | XLXI_2/counter<5>  | XLXI_2/counter<6>  | XLXI_2/counter<7>  | XLXI_2/counter<8>  | XLXI_2/counter<9>  | XLXI_2/counter<11>  | XLXI_2/counter<12>  | XLXI_2/counter<13>
+INPUTMC | 16 | 1 | 0 | 1 | 8 | 0 | 15 | 0 | 13 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 12 | 0 | 5 | 0 | 2
+EQ | 8 | 
+   XLXI_2/counter<14>.T := XLXI_4/input_temp<0>.COMB & XLXI_2/counter<14>
+	# XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB & 
+	XLXI_2/counter<10> & XLXI_2/counter<1> & XLXI_2/counter<2> & 
+	XLXI_2/counter<3> & XLXI_2/counter<4> & XLXI_2/counter<5> & 
+	XLXI_2/counter<6> & XLXI_2/counter<7> & XLXI_2/counter<8> & 
+	XLXI_2/counter<9> & XLXI_2/counter<11> & XLXI_2/counter<12> & 
+	XLXI_2/counter<13>;	// (2 pt, 16 inp)
+   XLXI_2/counter<14>.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 1 | 9 | XLXI_2/counter<15>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 3 | 1 | 9 | 1 | 10 | 1 | 0
+INPUTS | 17 | XLXI_4/input_temp<0>.COMB  | XLXI_2/counter<15>  | XLXI_2/counter<0>  | XLXI_2/counter<10>  | XLXI_2/counter<1>  | XLXI_2/counter<2>  | XLXI_2/counter<3>  | XLXI_2/counter<4>  | XLXI_2/counter<5>  | XLXI_2/counter<6>  | XLXI_2/counter<7>  | XLXI_2/counter<8>  | XLXI_2/counter<9>  | XLXI_2/counter<11>  | XLXI_2/counter<12>  | XLXI_2/counter<13>  | XLXI_2/counter<14>
+INPUTMC | 17 | 1 | 0 | 1 | 9 | 0 | 15 | 0 | 13 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8
+EQ | 8 | 
+   XLXI_2/counter<15>.T := XLXI_4/input_temp<0>.COMB & XLXI_2/counter<15>
+	# XLXI_2/counter<0> & !XLXI_4/input_temp<0>.COMB & 
+	XLXI_2/counter<10> & XLXI_2/counter<1> & XLXI_2/counter<2> & 
+	XLXI_2/counter<3> & XLXI_2/counter<4> & XLXI_2/counter<5> & 
+	XLXI_2/counter<6> & XLXI_2/counter<7> & XLXI_2/counter<8> & 
+	XLXI_2/counter<9> & XLXI_2/counter<11> & XLXI_2/counter<12> & 
+	XLXI_2/counter<13> & XLXI_2/counter<14>;	// (2 pt, 17 inp)
+   XLXI_2/counter<15>.CLK  =  In_clock;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | In_clock
+
+MACROCELL | 1 | 6 | XLXI_5/temp_MC
+ATTRIBUTES | 2155873056 | 0
+OUTPUTMC | 5 | 1 | 6 | 2 | 0 | 1 | 7 | 1 | 3 | 1 | 2
+INPUTS | 4 | XLXI_5/temp  | XLXI_4/input_temp<1>.COMB  | XLXI_4/input_temp<4>.COMB  | dzielnikwy
+INPUTMC | 4 | 1 | 6 | 1 | 3 | 1 | 2 | 1 | 10
+EQ | 4 | 
+   XLXI_5/temp := XLXI_5/temp & !XLXI_4/input_temp<1>.COMB
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB;	// (2 pt, 3 inp)
+    XLXI_5/temp.CLK = dzielnikwy;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 2 | XLXI_4/input_temp<4>_MC
+ATTRIBUTES | 679478016 | 5
+OUTPUTMC | 34 | 9 | 13 | 1 | 6 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 4 | 11 | 3 | 15 | 4 | 10 | 4 | 9 | 1 | 5
+INPUTS | 3 | XLXI_5/temp  | XLXI_5/counter<31>  | XLXI_5/Mcompar_counter_cmp_ge0000_AGEB5
+INPUTMC | 3 | 1 | 6 | 1 | 5 | 3 | 11
+LCT | 1 | 2 | Internal_Name
+EQ | 5 | 
+   XLXI_4/input_temp<4>.COMB =  XLXI_5/temp & !XLXI_5/counter<31> & 
+	!XLXI_5/Mcompar_counter_cmp_ge0000_AGEB5;	// (1 pt, 3 inp)
+// Direct Input Register
+XLXI_4/input_temp<4> := Input_data<4>;	// (0 pt, 0 inp)
+    XLXI_4/input_temp<4>.CLK = !(btn0);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 3 | XLXI_4/input_temp<1>_MC
+ATTRIBUTES | 679478016 | 5
+OUTPUTMC | 34 | 8 | 5 | 1 | 6 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 4 | 11 | 3 | 15 | 4 | 10 | 4 | 9 | 1 | 5
+INPUTS | 4 | XLXI_5/counter<31>  | NCS  | XLXI_5/Mcompar_counter_cmp_ge0000_AGEB5  | XLXI_5/temp
+INPUTMC | 4 | 1 | 5 | 0 | 11 | 3 | 11 | 1 | 6
+LCT | 1 | 2 | Internal_Name
+EQ | 7 | 
+   XLXI_4/input_temp<1>.COMB =  XLXI_5/counter<31> & !NCS
+	# XLXI_5/Mcompar_counter_cmp_ge0000_AGEB5 & !NCS
+	# XLXI_5/temp & !XLXI_5/counter<31> & 
+	!XLXI_5/Mcompar_counter_cmp_ge0000_AGEB5;	// (3 pt, 4 inp)
+// Direct Input Register
+XLXI_4/input_temp<1> := Input_data<1>;	// (0 pt, 0 inp)
+    XLXI_4/input_temp<1>.CLK = !(btn0);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 11 | NCS_MC
+ATTRIBUTES | 1610875650 | 0
+OUTPUTMC | 1 | 1 | 3
+INPUTS | 2 | XLXI_5/cs_state2  | XLXI_5/cs_state1
+INPUTMC | 2 | 1 | 7 | 1 | 15
+EQ | 2 | 
+   NCS = XLXI_5/cs_state2 & XLXI_5/cs_state1
+	# !XLXI_5/cs_state2 & !XLXI_5/cs_state1;	// (2 pt, 2 inp)
+
+MACROCELL | 1 | 7 | XLXI_5/cs_state2_MC
+ATTRIBUTES | 2151678752 | 0
+OUTPUTMC | 1 | 0 | 11
+INPUTS | 4 | XLXI_5/temp  | XLXI_5/counter<31>  | XLXI_5/Mcompar_counter_cmp_ge0000_AGEB5  | dzielnikwy
+INPUTMC | 4 | 1 | 6 | 1 | 5 | 3 | 11 | 1 | 10
+EQ | 3 | 
+   XLXI_5/cs_state2.T := XLXI_5/temp & !XLXI_5/counter<31> & 
+	!XLXI_5/Mcompar_counter_cmp_ge0000_AGEB5;	// (1 pt, 3 inp)
+    XLXI_5/cs_state2.CLK = dzielnikwy;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 5 | XLXI_5/counter<31>_MC
+ATTRIBUTES | 2151678752 | 0
+OUTPUTMC | 4 | 1 | 5 | 1 | 7 | 1 | 3 | 1 | 2
+INPUTS | 8 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<31>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | N_PZ_274  | dzielnikwy
+INPUTMC | 8 | 1 | 2 | 1 | 3 | 1 | 5 | 2 | 14 | 2 | 12 | 1 | 1 | 3 | 13 | 1 | 10
+EQ | 6 | 
+   XLXI_5/counter<31>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<31>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & N_PZ_274;	// (2 pt, 7 inp)
+    XLXI_5/counter<31>.CLK = dzielnikwy;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 14 | XLXI_5/counter<0>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 34 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 1 | 5
+INPUTS | 3 | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<0>  | XLXI_4/input_temp<4>.COMB
+INPUTMC | 3 | 1 | 3 | 2 | 14 | 1 | 2
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   XLXI_5/counter<0> := !XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & !XLXI_5/counter<0>;	// (2 pt, 3 inp)
+    XLXI_5/counter<0>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 12 | XLXI_5/counter<1>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 33 | 2 | 12 | 1 | 1 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 1 | 5
+INPUTS | 4 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<1>  | XLXI_5/counter<0>
+INPUTMC | 4 | 1 | 2 | 1 | 3 | 2 | 12 | 2 | 14
+LCT | 1 | 2 | Internal_Name
+EQ | 5 | 
+   XLXI_5/counter<1>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<1>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0>;	// (2 pt, 4 inp)
+    XLXI_5/counter<1>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 1 | XLXI_5/counter<2>_MC
+ATTRIBUTES | 2151678752 | 0
+OUTPUTMC | 31 | 1 | 1 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 8 | 3 | 9 | 1 | 5
+INPUTS | 6 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<2>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | dzielnikwy
+INPUTMC | 6 | 1 | 2 | 1 | 3 | 1 | 1 | 2 | 14 | 2 | 12 | 1 | 10
+EQ | 5 | 
+   XLXI_5/counter<2>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<2>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1>;	// (2 pt, 5 inp)
+    XLXI_5/counter<2>.CLK = dzielnikwy;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 13 | N_PZ_274_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 1 | 5
+INPUTS | 28 | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>  | XLXI_5/counter<18>  | XLXI_5/counter<19>  | XLXI_5/counter<20>  | XLXI_5/counter<21>  | XLXI_5/counter<22>  | XLXI_5/counter<23>  | XLXI_5/counter<24>  | XLXI_5/counter<25>  | XLXI_5/counter<26>  | XLXI_5/counter<27>  | XLXI_5/counter<28>  | XLXI_5/counter<29>  | XLXI_5/counter<30>
+INPUTMC | 28 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 4 | 11 | 3 | 15 | 4 | 10 | 4 | 9
+EQ | 10 | 
+   N_PZ_274 = XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16> & 
+	XLXI_5/counter<17> & XLXI_5/counter<18> & XLXI_5/counter<19> & 
+	XLXI_5/counter<20> & XLXI_5/counter<21> & XLXI_5/counter<22> & 
+	XLXI_5/counter<23> & XLXI_5/counter<24> & XLXI_5/counter<25> & 
+	XLXI_5/counter<26> & XLXI_5/counter<27> & XLXI_5/counter<28> & 
+	XLXI_5/counter<29> & XLXI_5/counter<30>;	// (1 pt, 28 inp)
+
+MACROCELL | 2 | 3 | XLXI_5/counter<10>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 25 | 2 | 3 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 13 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<10>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>
+INPUTMC | 13 | 1 | 2 | 1 | 3 | 2 | 3 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5
+LCT | 1 | 2 | Internal_Name
+EQ | 8 | 
+   XLXI_5/counter<10>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<10>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<3> & XLXI_5/counter<4> & 
+	XLXI_5/counter<5> & XLXI_5/counter<6> & XLXI_5/counter<7> & 
+	XLXI_5/counter<8> & XLXI_5/counter<9>;	// (2 pt, 13 inp)
+    XLXI_5/counter<10>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 11 | XLXI_5/counter<3>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 32 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 6 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<3>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>
+INPUTMC | 6 | 1 | 2 | 1 | 3 | 2 | 11 | 2 | 14 | 2 | 12 | 1 | 1
+LCT | 1 | 2 | Internal_Name
+EQ | 6 | 
+   XLXI_5/counter<3>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<3>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2>;	// (2 pt, 6 inp)
+    XLXI_5/counter<3>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 10 | XLXI_5/counter<4>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 31 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 7 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<4>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<3>
+INPUTMC | 7 | 1 | 2 | 1 | 3 | 2 | 10 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 11
+LCT | 1 | 2 | Internal_Name
+EQ | 6 | 
+   XLXI_5/counter<4>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<4>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<3>;	// (2 pt, 7 inp)
+    XLXI_5/counter<4>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 9 | XLXI_5/counter<5>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 30 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 8 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<5>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<3>  | XLXI_5/counter<4>
+INPUTMC | 8 | 1 | 2 | 1 | 3 | 2 | 9 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 11 | 2 | 10
+LCT | 1 | 2 | Internal_Name
+EQ | 6 | 
+   XLXI_5/counter<5>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<5>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<3> & XLXI_5/counter<4>;	// (2 pt, 8 inp)
+    XLXI_5/counter<5>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 8 | XLXI_5/counter<6>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 29 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 9 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<6>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>
+INPUTMC | 9 | 1 | 2 | 1 | 3 | 2 | 8 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 11 | 2 | 10 | 2 | 9
+LCT | 1 | 2 | Internal_Name
+EQ | 7 | 
+   XLXI_5/counter<6>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<6>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<3> & XLXI_5/counter<4> & 
+	XLXI_5/counter<5>;	// (2 pt, 9 inp)
+    XLXI_5/counter<6>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 7 | XLXI_5/counter<7>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 28 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 10 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<7>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>
+INPUTMC | 10 | 1 | 2 | 1 | 3 | 2 | 7 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8
+LCT | 1 | 2 | Internal_Name
+EQ | 7 | 
+   XLXI_5/counter<7>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<7>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<3> & XLXI_5/counter<4> & 
+	XLXI_5/counter<5> & XLXI_5/counter<6>;	// (2 pt, 10 inp)
+    XLXI_5/counter<7>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 6 | XLXI_5/counter<8>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 27 | 2 | 6 | 2 | 5 | 2 | 3 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 11 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<8>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>
+INPUTMC | 11 | 1 | 2 | 1 | 3 | 2 | 6 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7
+LCT | 1 | 2 | Internal_Name
+EQ | 7 | 
+   XLXI_5/counter<8>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<8>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<3> & XLXI_5/counter<4> & 
+	XLXI_5/counter<5> & XLXI_5/counter<6> & XLXI_5/counter<7>;	// (2 pt, 11 inp)
+    XLXI_5/counter<8>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 5 | XLXI_5/counter<9>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 26 | 2 | 5 | 2 | 3 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 12 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<9>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>
+INPUTMC | 12 | 1 | 2 | 1 | 3 | 2 | 5 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6
+LCT | 1 | 2 | Internal_Name
+EQ | 8 | 
+   XLXI_5/counter<9>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<9>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<3> & XLXI_5/counter<4> & 
+	XLXI_5/counter<5> & XLXI_5/counter<6> & XLXI_5/counter<7> & 
+	XLXI_5/counter<8>;	// (2 pt, 12 inp)
+    XLXI_5/counter<9>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 15 | XLXI_5/counter<11>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 24 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 14 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<11>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>
+INPUTMC | 14 | 1 | 2 | 1 | 3 | 2 | 15 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5
+LCT | 1 | 2 | Internal_Name
+EQ | 8 | 
+   XLXI_5/counter<11>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<11>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9>;	// (2 pt, 14 inp)
+    XLXI_5/counter<11>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 13 | XLXI_5/counter<12>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 23 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 15 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<12>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>
+INPUTMC | 15 | 1 | 2 | 1 | 3 | 2 | 13 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15
+LCT | 1 | 2 | Internal_Name
+EQ | 9 | 
+   XLXI_5/counter<12>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<12>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11>;	// (2 pt, 15 inp)
+    XLXI_5/counter<12>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 4 | XLXI_5/counter<13>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 22 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 16 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<13>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>
+INPUTMC | 16 | 1 | 2 | 1 | 3 | 2 | 4 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13
+LCT | 1 | 2 | Internal_Name
+EQ | 9 | 
+   XLXI_5/counter<13>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<13>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12>;	// (2 pt, 16 inp)
+    XLXI_5/counter<13>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 2 | XLXI_5/counter<14>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 21 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 17 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<14>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>
+INPUTMC | 17 | 1 | 2 | 1 | 3 | 2 | 2 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4
+LCT | 1 | 2 | Internal_Name
+EQ | 9 | 
+   XLXI_5/counter<14>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<14>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13>;	// (2 pt, 17 inp)
+    XLXI_5/counter<14>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 1 | XLXI_5/counter<15>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 20 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 18 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<15>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>
+INPUTMC | 18 | 1 | 2 | 1 | 3 | 2 | 1 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2
+LCT | 1 | 2 | Internal_Name
+EQ | 10 | 
+   XLXI_5/counter<15>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<15>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14>;	// (2 pt, 18 inp)
+    XLXI_5/counter<15>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 4 | 12 | XLXI_5/counter<16>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 19 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 19 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<16>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>
+INPUTMC | 19 | 1 | 2 | 1 | 3 | 4 | 12 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1
+LCT | 1 | 2 | Internal_Name
+EQ | 10 | 
+   XLXI_5/counter<16>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<16>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15>;	// (2 pt, 19 inp)
+    XLXI_5/counter<16>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 4 | 14 | XLXI_5/counter<17>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 18 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 20 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<17>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>
+INPUTMC | 20 | 1 | 2 | 1 | 3 | 4 | 14 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12
+LCT | 1 | 2 | Internal_Name
+EQ | 10 | 
+   XLXI_5/counter<17>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<17>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16>;	// (2 pt, 20 inp)
+    XLXI_5/counter<17>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 4 | 15 | XLXI_5/counter<18>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 17 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 21 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<18>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>
+INPUTMC | 21 | 1 | 2 | 1 | 3 | 4 | 15 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14
+LCT | 1 | 2 | Internal_Name
+EQ | 11 | 
+   XLXI_5/counter<18>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<18>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16> & 
+	XLXI_5/counter<17>;	// (2 pt, 21 inp)
+    XLXI_5/counter<18>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 0 | XLXI_5/counter<19>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 16 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 22 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<19>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>  | XLXI_5/counter<18>
+INPUTMC | 22 | 1 | 2 | 1 | 3 | 3 | 0 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15
+LCT | 1 | 2 | Internal_Name
+EQ | 11 | 
+   XLXI_5/counter<19>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<19>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16> & 
+	XLXI_5/counter<17> & XLXI_5/counter<18>;	// (2 pt, 22 inp)
+    XLXI_5/counter<19>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 1 | XLXI_5/counter<20>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 15 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 23 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<20>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>  | XLXI_5/counter<18>  | XLXI_5/counter<19>
+INPUTMC | 23 | 1 | 2 | 1 | 3 | 3 | 1 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0
+LCT | 1 | 2 | Internal_Name
+EQ | 11 | 
+   XLXI_5/counter<20>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<20>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16> & 
+	XLXI_5/counter<17> & XLXI_5/counter<18> & XLXI_5/counter<19>;	// (2 pt, 23 inp)
+    XLXI_5/counter<20>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 2 | XLXI_5/counter<21>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 14 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 24 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<21>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>  | XLXI_5/counter<18>  | XLXI_5/counter<19>  | XLXI_5/counter<20>
+INPUTMC | 24 | 1 | 2 | 1 | 3 | 3 | 2 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1
+LCT | 1 | 2 | Internal_Name
+EQ | 12 | 
+   XLXI_5/counter<21>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<21>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16> & 
+	XLXI_5/counter<17> & XLXI_5/counter<18> & XLXI_5/counter<19> & 
+	XLXI_5/counter<20>;	// (2 pt, 24 inp)
+    XLXI_5/counter<21>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 3 | XLXI_5/counter<22>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 13 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 25 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<22>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>  | XLXI_5/counter<18>  | XLXI_5/counter<19>  | XLXI_5/counter<20>  | XLXI_5/counter<21>
+INPUTMC | 25 | 1 | 2 | 1 | 3 | 3 | 3 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2
+LCT | 1 | 2 | Internal_Name
+EQ | 12 | 
+   XLXI_5/counter<22>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<22>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16> & 
+	XLXI_5/counter<17> & XLXI_5/counter<18> & XLXI_5/counter<19> & 
+	XLXI_5/counter<20> & XLXI_5/counter<21>;	// (2 pt, 25 inp)
+    XLXI_5/counter<22>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 4 | XLXI_5/counter<23>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 12 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 26 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<23>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>  | XLXI_5/counter<18>  | XLXI_5/counter<19>  | XLXI_5/counter<20>  | XLXI_5/counter<21>  | XLXI_5/counter<22>
+INPUTMC | 26 | 1 | 2 | 1 | 3 | 3 | 4 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3
+LCT | 1 | 2 | Internal_Name
+EQ | 12 | 
+   XLXI_5/counter<23>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<23>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16> & 
+	XLXI_5/counter<17> & XLXI_5/counter<18> & XLXI_5/counter<19> & 
+	XLXI_5/counter<20> & XLXI_5/counter<21> & XLXI_5/counter<22>;	// (2 pt, 26 inp)
+    XLXI_5/counter<23>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 5 | XLXI_5/counter<24>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 11 | 3 | 5 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 27 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<24>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>  | XLXI_5/counter<18>  | XLXI_5/counter<19>  | XLXI_5/counter<20>  | XLXI_5/counter<21>  | XLXI_5/counter<22>  | XLXI_5/counter<23>
+INPUTMC | 27 | 1 | 2 | 1 | 3 | 3 | 5 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4
+LCT | 1 | 2 | Internal_Name
+EQ | 13 | 
+   XLXI_5/counter<24>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<24>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16> & 
+	XLXI_5/counter<17> & XLXI_5/counter<18> & XLXI_5/counter<19> & 
+	XLXI_5/counter<20> & XLXI_5/counter<21> & XLXI_5/counter<22> & 
+	XLXI_5/counter<23>;	// (2 pt, 27 inp)
+    XLXI_5/counter<24>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 10 | XLXI_5/counter<25>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 10 | 3 | 10 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 28 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<25>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>  | XLXI_5/counter<18>  | XLXI_5/counter<19>  | XLXI_5/counter<20>  | XLXI_5/counter<21>  | XLXI_5/counter<22>  | XLXI_5/counter<23>  | XLXI_5/counter<24>
+INPUTMC | 28 | 1 | 2 | 1 | 3 | 3 | 10 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5
+LCT | 1 | 2 | Internal_Name
+EQ | 13 | 
+   XLXI_5/counter<25>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<25>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16> & 
+	XLXI_5/counter<17> & XLXI_5/counter<18> & XLXI_5/counter<19> & 
+	XLXI_5/counter<20> & XLXI_5/counter<21> & XLXI_5/counter<22> & 
+	XLXI_5/counter<23> & XLXI_5/counter<24>;	// (2 pt, 28 inp)
+    XLXI_5/counter<25>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 14 | XLXI_5/counter<26>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 9 | 3 | 14 | 3 | 6 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 29 | XLXI_4/input_temp<4>.COMB  | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<26>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>  | XLXI_5/counter<18>  | XLXI_5/counter<19>  | XLXI_5/counter<20>  | XLXI_5/counter<21>  | XLXI_5/counter<22>  | XLXI_5/counter<23>  | XLXI_5/counter<24>  | XLXI_5/counter<25>
+INPUTMC | 29 | 1 | 2 | 1 | 3 | 3 | 14 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10
+LCT | 1 | 2 | Internal_Name
+EQ | 13 | 
+   XLXI_5/counter<26>.T := XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<26>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16> & 
+	XLXI_5/counter<17> & XLXI_5/counter<18> & XLXI_5/counter<19> & 
+	XLXI_5/counter<20> & XLXI_5/counter<21> & XLXI_5/counter<22> & 
+	XLXI_5/counter<23> & XLXI_5/counter<24> & XLXI_5/counter<25>;	// (2 pt, 29 inp)
+    XLXI_5/counter<26>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 4 | 11 | XLXI_5/counter<27>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 9 | 3 | 6 | 4 | 11 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 4 | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<27>  | XLXI_4/input_temp<4>.COMB  | XLXI_5/counter__add0000<27>
+INPUTMC | 4 | 1 | 3 | 4 | 11 | 1 | 2 | 3 | 6
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   XLXI_5/counter<27> := !XLXI_4/input_temp<1>.COMB & XLXI_5/counter<27>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter__add0000<27>;	// (2 pt, 4 inp)
+    XLXI_5/counter<27>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 6 | XLXI_5/counter__add0000<27>_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 4 | 11
+INPUTS | 28 | XLXI_5/counter<27>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>  | XLXI_5/counter<18>  | XLXI_5/counter<19>  | XLXI_5/counter<20>  | XLXI_5/counter<21>  | XLXI_5/counter<22>  | XLXI_5/counter<23>  | XLXI_5/counter<24>  | XLXI_5/counter<25>  | XLXI_5/counter<26>
+INPUTMC | 28 | 4 | 11 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14
+EQ | 11 | 
+   XLXI_5/counter__add0000<27> = XLXI_5/counter<27>
+	$ XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16> & 
+	XLXI_5/counter<17> & XLXI_5/counter<18> & XLXI_5/counter<19> & 
+	XLXI_5/counter<20> & XLXI_5/counter<21> & XLXI_5/counter<22> & 
+	XLXI_5/counter<23> & XLXI_5/counter<24> & XLXI_5/counter<25> & 
+	XLXI_5/counter<26>;	// (2 pt, 28 inp)
+
+MACROCELL | 3 | 15 | XLXI_5/counter<28>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 7 | 3 | 12 | 3 | 15 | 3 | 7 | 3 | 8 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 32 | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<28>  | XLXI_4/input_temp<4>.COMB  | N_PZ_255  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>  | XLXI_5/counter<18>  | XLXI_5/counter<19>  | XLXI_5/counter<20>  | XLXI_5/counter<21>  | XLXI_5/counter<22>  | XLXI_5/counter<23>  | XLXI_5/counter<24>  | XLXI_5/counter<25>  | XLXI_5/counter<26>  | XLXI_5/counter<27>
+INPUTMC | 32 | 1 | 3 | 3 | 15 | 1 | 2 | 3 | 12 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 4 | 11
+LCT | 1 | 2 | Internal_Name
+EQ | 15 | 
+   XLXI_5/counter<28> := !XLXI_4/input_temp<1>.COMB & XLXI_5/counter<28>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & !N_PZ_255
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16> & 
+	XLXI_5/counter<17> & XLXI_5/counter<18> & XLXI_5/counter<19> & 
+	XLXI_5/counter<20> & XLXI_5/counter<21> & XLXI_5/counter<22> & 
+	XLXI_5/counter<23> & XLXI_5/counter<24> & XLXI_5/counter<25> & 
+	XLXI_5/counter<26> & XLXI_5/counter<27> & !XLXI_5/counter<28>;	// (3 pt, 32 inp)
+    XLXI_5/counter<28>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 12 | N_PZ_255_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 3 | 15
+INPUTS | 29 | XLXI_5/counter<28>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>  | XLXI_5/counter<18>  | XLXI_5/counter<19>  | XLXI_5/counter<20>  | XLXI_5/counter<21>  | XLXI_5/counter<22>  | XLXI_5/counter<23>  | XLXI_5/counter<24>  | XLXI_5/counter<25>  | XLXI_5/counter<26>  | XLXI_5/counter<27>
+INPUTMC | 29 | 3 | 15 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 4 | 11
+EQ | 11 | 
+   N_PZ_255 = !XLXI_5/counter<28>
+	# XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16> & 
+	XLXI_5/counter<17> & XLXI_5/counter<18> & XLXI_5/counter<19> & 
+	XLXI_5/counter<20> & XLXI_5/counter<21> & XLXI_5/counter<22> & 
+	XLXI_5/counter<23> & XLXI_5/counter<24> & XLXI_5/counter<25> & 
+	XLXI_5/counter<26> & XLXI_5/counter<27>;	// (2 pt, 29 inp)
+
+MACROCELL | 4 | 10 | XLXI_5/counter<29>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 6 | 3 | 7 | 3 | 8 | 4 | 10 | 3 | 9 | 3 | 13 | 3 | 11
+INPUTS | 4 | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<29>  | XLXI_4/input_temp<4>.COMB  | XLXI_5/counter__add0000<29>
+INPUTMC | 4 | 1 | 3 | 4 | 10 | 1 | 2 | 3 | 8
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   XLXI_5/counter<29> := !XLXI_4/input_temp<1>.COMB & XLXI_5/counter<29>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter__add0000<29>;	// (2 pt, 4 inp)
+    XLXI_5/counter<29>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 8 | XLXI_5/counter__add0000<29>_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 4 | 10
+INPUTS | 31 | N_PZ_261  | XLXI_5/counter<2>  | XLXI_5/counter<29>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>  | XLXI_5/counter<18>  | XLXI_5/counter<19>  | XLXI_5/counter<20>  | XLXI_5/counter<21>  | XLXI_5/counter<22>  | XLXI_5/counter<23>  | XLXI_5/counter<24>  | XLXI_5/counter<25>  | XLXI_5/counter<26>  | XLXI_5/counter<27>  | XLXI_5/counter<28>
+INPUTMC | 31 | 3 | 7 | 1 | 1 | 4 | 10 | 2 | 14 | 2 | 12 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 4 | 11 | 3 | 15
+EQ | 13 | 
+   XLXI_5/counter__add0000<29> = !N_PZ_261
+	# !XLXI_5/counter<2> & XLXI_5/counter<29>
+	# XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16> & 
+	XLXI_5/counter<17> & XLXI_5/counter<18> & XLXI_5/counter<19> & 
+	XLXI_5/counter<20> & XLXI_5/counter<21> & XLXI_5/counter<22> & 
+	XLXI_5/counter<23> & XLXI_5/counter<24> & XLXI_5/counter<25> & 
+	XLXI_5/counter<26> & XLXI_5/counter<27> & XLXI_5/counter<28> & 
+	!XLXI_5/counter<29>;	// (3 pt, 31 inp)
+
+MACROCELL | 3 | 7 | N_PZ_261_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 3 | 8
+INPUTS | 29 | XLXI_5/counter<29>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>  | XLXI_5/counter<18>  | XLXI_5/counter<19>  | XLXI_5/counter<20>  | XLXI_5/counter<21>  | XLXI_5/counter<22>  | XLXI_5/counter<23>  | XLXI_5/counter<24>  | XLXI_5/counter<25>  | XLXI_5/counter<26>  | XLXI_5/counter<27>  | XLXI_5/counter<28>
+INPUTMC | 29 | 4 | 10 | 2 | 14 | 2 | 12 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 4 | 11 | 3 | 15
+EQ | 11 | 
+   N_PZ_261 = !XLXI_5/counter<29>
+	# XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<10> & XLXI_5/counter<3> & XLXI_5/counter<4> & 
+	XLXI_5/counter<5> & XLXI_5/counter<6> & XLXI_5/counter<7> & 
+	XLXI_5/counter<8> & XLXI_5/counter<9> & XLXI_5/counter<11> & 
+	XLXI_5/counter<12> & XLXI_5/counter<13> & XLXI_5/counter<14> & 
+	XLXI_5/counter<15> & XLXI_5/counter<16> & XLXI_5/counter<17> & 
+	XLXI_5/counter<18> & XLXI_5/counter<19> & XLXI_5/counter<20> & 
+	XLXI_5/counter<21> & XLXI_5/counter<22> & XLXI_5/counter<23> & 
+	XLXI_5/counter<24> & XLXI_5/counter<25> & XLXI_5/counter<26> & 
+	XLXI_5/counter<27> & XLXI_5/counter<28>;	// (2 pt, 29 inp)
+
+MACROCELL | 4 | 9 | XLXI_5/counter<30>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 4 | 3 | 9 | 4 | 9 | 3 | 13 | 3 | 11
+INPUTS | 4 | XLXI_4/input_temp<1>.COMB  | XLXI_5/counter<30>  | XLXI_4/input_temp<4>.COMB  | XLXI_5/counter__add0000<30>
+INPUTMC | 4 | 1 | 3 | 4 | 9 | 1 | 2 | 3 | 9
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   XLXI_5/counter<30> := !XLXI_4/input_temp<1>.COMB & XLXI_5/counter<30>
+	# !XLXI_4/input_temp<4>.COMB & 
+	XLXI_4/input_temp<1>.COMB & XLXI_5/counter__add0000<30>;	// (2 pt, 4 inp)
+    XLXI_5/counter<30>.CLK = dzielnikwy;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 9 | XLXI_5/counter__add0000<30>_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 1 | 4 | 9
+INPUTS | 31 | XLXI_5/counter<30>  | XLXI_5/counter<0>  | XLXI_5/counter<1>  | XLXI_5/counter<2>  | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>  | XLXI_5/counter<18>  | XLXI_5/counter<19>  | XLXI_5/counter<20>  | XLXI_5/counter<21>  | XLXI_5/counter<22>  | XLXI_5/counter<23>  | XLXI_5/counter<24>  | XLXI_5/counter<25>  | XLXI_5/counter<26>  | XLXI_5/counter<27>  | XLXI_5/counter<28>  | XLXI_5/counter<29>
+INPUTMC | 31 | 4 | 9 | 2 | 14 | 2 | 12 | 1 | 1 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 4 | 11 | 3 | 15 | 4 | 10
+EQ | 23 | 
+   XLXI_5/counter__add0000<30> = XLXI_5/counter<30>
+	$ XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16> & 
+	XLXI_5/counter<17> & XLXI_5/counter<18> & XLXI_5/counter<19> & 
+	XLXI_5/counter<20> & XLXI_5/counter<21> & XLXI_5/counter<22> & 
+	XLXI_5/counter<23> & XLXI_5/counter<24> & XLXI_5/counter<25> & 
+	XLXI_5/counter<26> & XLXI_5/counter<27> & XLXI_5/counter<28> & 
+	XLXI_5/counter<29> & XLXI_5/counter<30>
+	# XLXI_5/counter<0> & XLXI_5/counter<1> & 
+	XLXI_5/counter<2> & XLXI_5/counter<10> & XLXI_5/counter<3> & 
+	XLXI_5/counter<4> & XLXI_5/counter<5> & XLXI_5/counter<6> & 
+	XLXI_5/counter<7> & XLXI_5/counter<8> & XLXI_5/counter<9> & 
+	XLXI_5/counter<11> & XLXI_5/counter<12> & XLXI_5/counter<13> & 
+	XLXI_5/counter<14> & XLXI_5/counter<15> & XLXI_5/counter<16> & 
+	XLXI_5/counter<17> & XLXI_5/counter<18> & XLXI_5/counter<19> & 
+	XLXI_5/counter<20> & XLXI_5/counter<21> & XLXI_5/counter<22> & 
+	XLXI_5/counter<23> & XLXI_5/counter<24> & XLXI_5/counter<25> & 
+	XLXI_5/counter<26> & XLXI_5/counter<27> & XLXI_5/counter<28> & 
+	XLXI_5/counter<29> & !XLXI_5/counter<30>;	// (3 pt, 31 inp)
+
+MACROCELL | 3 | 11 | XLXI_5/Mcompar_counter_cmp_ge0000_AGEB5_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 3 | 1 | 7 | 1 | 3 | 1 | 2
+INPUTS | 28 | XLXI_5/counter<10>  | XLXI_5/counter<3>  | XLXI_5/counter<4>  | XLXI_5/counter<5>  | XLXI_5/counter<6>  | XLXI_5/counter<7>  | XLXI_5/counter<8>  | XLXI_5/counter<9>  | XLXI_5/counter<11>  | XLXI_5/counter<12>  | XLXI_5/counter<13>  | XLXI_5/counter<14>  | XLXI_5/counter<15>  | XLXI_5/counter<16>  | XLXI_5/counter<17>  | XLXI_5/counter<18>  | XLXI_5/counter<19>  | XLXI_5/counter<20>  | XLXI_5/counter<21>  | XLXI_5/counter<22>  | XLXI_5/counter<23>  | XLXI_5/counter<24>  | XLXI_5/counter<25>  | XLXI_5/counter<26>  | XLXI_5/counter<27>  | XLXI_5/counter<28>  | XLXI_5/counter<29>  | XLXI_5/counter<30>
+INPUTMC | 28 | 2 | 3 | 2 | 11 | 2 | 10 | 2 | 9 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 13 | 2 | 4 | 2 | 2 | 2 | 1 | 4 | 12 | 4 | 14 | 4 | 15 | 3 | 0 | 3 | 1 | 3 | 2 | 3 | 3 | 3 | 4 | 3 | 5 | 3 | 10 | 3 | 14 | 4 | 11 | 3 | 15 | 4 | 10 | 4 | 9
+EQ | 10 | 
+   XLXI_5/Mcompar_counter_cmp_ge0000_AGEB5 = !XLXI_5/counter<10> & !XLXI_5/counter<3> & 
+	!XLXI_5/counter<4> & !XLXI_5/counter<5> & !XLXI_5/counter<6> & 
+	!XLXI_5/counter<7> & !XLXI_5/counter<8> & !XLXI_5/counter<9> & 
+	!XLXI_5/counter<11> & !XLXI_5/counter<12> & !XLXI_5/counter<13> & 
+	!XLXI_5/counter<14> & !XLXI_5/counter<15> & !XLXI_5/counter<16> & 
+	!XLXI_5/counter<17> & !XLXI_5/counter<18> & !XLXI_5/counter<19> & 
+	!XLXI_5/counter<20> & !XLXI_5/counter<21> & !XLXI_5/counter<22> & 
+	!XLXI_5/counter<23> & !XLXI_5/counter<24> & !XLXI_5/counter<25> & 
+	!XLXI_5/counter<26> & !XLXI_5/counter<27> & !XLXI_5/counter<28> & 
+	!XLXI_5/counter<29> & !XLXI_5/counter<30>;	// (1 pt, 28 inp)
+
+MACROCELL | 1 | 15 | XLXI_5/cs_state1_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 1 | 0 | 11
+INPUTS | 0
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   !XLXI_5/cs_state1.T := Gnd;	// (0 pt, 0 inp)
+    XLXI_5/cs_state1.CLK = !(btn0);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 8 | 14 | Output_data<0>_MC
+ATTRIBUTES | 142869250 | 0
+INPUTS | 1 | XLXI_4/buf_wej
+INPUTMC | 1 | 5 | 11
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   Output_data<0> := XLXI_4/buf_wej;	// (1 pt, 1 inp)
+    Output_data<0>.CLK = Out_clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 5 | 11 | XLXI_4/buf_wej_MC
+ATTRIBUTES | 2290089984 | 4
+OUTPUTMC | 1 | 8 | 14
+INPUTS | 0 
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   
+// Direct Input Register
+XLXI_4/buf_wej := MISO;	// (0 pt, 0 inp)
+    XLXI_4/buf_wej.CLK = !(Out_clock);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 8 | 12 | Output_data<1>_MC
+ATTRIBUTES | 142869250 | 0
+INPUTS | 1 | XLXI_4/input_temp<0>
+INPUTMC | 1 | 1 | 0
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   Output_data<1> := XLXI_4/input_temp<0>;	// (1 pt, 1 inp)
+    Output_data<1>.CLK = Out_clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 8 | 5 | Output_data<2>_MC
+ATTRIBUTES | 142869250 | 0
+INPUTS | 1 | XLXI_4/input_temp<1>
+INPUTMC | 1 | 1 | 3
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   Output_data<2> := XLXI_4/input_temp<1>;	// (1 pt, 1 inp)
+    Output_data<2>.CLK = Out_clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 8 | 1 | Output_data<3>_MC
+ATTRIBUTES | 142869250 | 0
+INPUTS | 1 | XLXI_4/input_temp<2>
+INPUTMC | 1 | 1 | 11
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   Output_data<3> := XLXI_4/input_temp<2>;	// (1 pt, 1 inp)
+    Output_data<3>.CLK = Out_clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 11 | XLXI_4/input_temp<2>_MC
+ATTRIBUTES | 2290089984 | 4
+OUTPUTMC | 1 | 8 | 1
+INPUTS | 0 
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   
+// Direct Input Register
+XLXI_4/input_temp<2> := Input_data<2>;	// (0 pt, 0 inp)
+    XLXI_4/input_temp<2>.CLK = !(btn0);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 9 | 5 | Output_data<4>_MC
+ATTRIBUTES | 142869250 | 0
+INPUTS | 1 | XLXI_4/input_temp<3>
+INPUTMC | 1 | 1 | 13
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   Output_data<4> := XLXI_4/input_temp<3>;	// (1 pt, 1 inp)
+    Output_data<4>.CLK = Out_clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 13 | XLXI_4/input_temp<3>_MC
+ATTRIBUTES | 2290089984 | 4
+OUTPUTMC | 1 | 9 | 5
+INPUTS | 0 
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   
+// Direct Input Register
+XLXI_4/input_temp<3> := Input_data<3>;	// (0 pt, 0 inp)
+    XLXI_4/input_temp<3>.CLK = !(btn0);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 9 | 13 | Output_data<5>_MC
+ATTRIBUTES | 142869250 | 0
+INPUTS | 1 | XLXI_4/input_temp<4>
+INPUTMC | 1 | 1 | 2
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   Output_data<5> := XLXI_4/input_temp<4>;	// (1 pt, 1 inp)
+    Output_data<5>.CLK = Out_clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 11 | 1 | Output_data<6>_MC
+ATTRIBUTES | 142869250 | 0
+INPUTS | 1 | XLXI_4/input_temp<5>
+INPUTMC | 1 | 1 | 4
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   Output_data<6> := XLXI_4/input_temp<5>;	// (1 pt, 1 inp)
+    Output_data<6>.CLK = Out_clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 4 | XLXI_4/input_temp<5>_MC
+ATTRIBUTES | 2290089984 | 4
+OUTPUTMC | 1 | 11 | 1
+INPUTS | 0 
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   
+// Direct Input Register
+XLXI_4/input_temp<5> := Input_data<5>;	// (0 pt, 0 inp)
+    XLXI_4/input_temp<5>.CLK = !(btn0);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 11 | 11 | Output_data<7>_MC
+ATTRIBUTES | 142869250 | 0
+INPUTS | 1 | XLXI_4/input_temp<6>
+INPUTMC | 1 | 1 | 12
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   Output_data<7> := XLXI_4/input_temp<6>;	// (1 pt, 1 inp)
+    Output_data<7>.CLK = Out_clock;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 12 | XLXI_4/input_temp<6>_MC
+ATTRIBUTES | 2290089984 | 4
+OUTPUTMC | 1 | 11 | 11
+INPUTS | 0 
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   
+// Direct Input Register
+XLXI_4/input_temp<6> := Input_data<6>;	// (0 pt, 0 inp)
+    XLXI_4/input_temp<6>.CLK = !(btn0);	// CTC	(1 pt, 1 inp)
+
+PIN | In_clock | 16384 | 16 | LVCMOS18 | 59 | 17 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 8 | 1 | 9 | 1 | 10
+PIN | btn0 | 64 | 16 | LVCMOS18 | 218 | 0
+PIN | MISO | 64 | 16 | LVCMOS18 | 62 | 1 | 5 | 11
+PIN | Input_data<0> | 64 | 16 | LVCMOS18 | 1 | 1 | 1 | 0
+PIN | Input_data<1> | 64 | 16 | LVCMOS18 | 4 | 1 | 1 | 3
+PIN | Input_data<2> | 64 | 16 | LVCMOS18 | 7 | 1 | 1 | 11
+PIN | Input_data<3> | 64 | 16 | LVCMOS18 | 10 | 1 | 1 | 13
+PIN | Input_data<4> | 64 | 16 | LVCMOS18 | 3 | 1 | 1 | 2
+PIN | Input_data<5> | 64 | 16 | LVCMOS18 | 5 | 1 | 1 | 4
+PIN | Input_data<6> | 64 | 16 | LVCMOS18 | 8 | 1 | 1 | 12
+PIN | Input_data<7> | 64 | 16 | LVCMOS18 | 12 | 1 | 1 | 14
+PIN | MOSI | 536871040 | 0 | LVCMOS18 | 217
+PIN | NCS | 536871040 | 0 | LVCMOS18 | 213
+PIN | Out_clock | 536871040 | 0 | LVCMOS18 | 208
+PIN | Output_data<0> | 536871040 | 0 | LVCMOS18 | 178
+PIN | Output_data<1> | 536871040 | 0 | LVCMOS18 | 176
+PIN | Output_data<2> | 536871040 | 0 | LVCMOS18 | 173
+PIN | Output_data<3> | 536871040 | 0 | LVCMOS18 | 169
+PIN | Output_data<4> | 536871040 | 0 | LVCMOS18 | 160
+PIN | Output_data<5> | 536871040 | 0 | LVCMOS18 | 156
+PIN | Output_data<6> | 536871040 | 0 | LVCMOS18 | 152
+PIN | Output_data<7> | 536871040 | 0 | LVCMOS18 | 145

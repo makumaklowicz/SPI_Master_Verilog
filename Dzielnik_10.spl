@@ -1,0 +1,8 @@
+[Inputs]
+in_clock
+[Outputs]
+out_clock
+[BiDir]
+[ATTRIBUTES]
+VeriModel Dzielnik_10
+

@@ -1,0 +1,2 @@
+vhdtdtfi -lib work C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Dzielnik_10000.v -lang verilog -prj SPI_Master -o Dzielnik_10000.spl -module Dzielnik_10000 -template E:/Programy/ISE/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr Dzielnik_10000.spl C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Dzielnik_10000.sym 

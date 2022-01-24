@@ -1,0 +1,5 @@
+verilog work "Register.v"
+verilog work "Dzielnik_10000.v"
+verilog work "Automat.v"
+verilog work "SPI_Master.vf"
+verilog work "E:/Programy/ISE/14.7/ISE_DS/ISE//verilog/src/glbl.v"

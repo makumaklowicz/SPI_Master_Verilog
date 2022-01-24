@@ -1,0 +1,6 @@
+vhdtdtfi -lib work C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Automat.v -lang verilog -prj SPI_Master -o Automat.spl -module Automat -template E:/Programy/ISE/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr Automat.spl C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Automat.sym 
+vhdtdtfi -lib work C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Automat.v -lang verilog -prj SPI_Master -o Automat.spl -module Automat -template E:/Programy/ISE/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr Automat.spl C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Automat.sym 
+vhdtdtfi -lib work C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Automat.v -lang verilog -prj SPI_Master -o Automat.spl -module Automat -template E:/Programy/ISE/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr Automat.spl C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Automat.sym 

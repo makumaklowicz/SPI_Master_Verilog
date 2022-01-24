@@ -1,0 +1,195 @@
+                           Performance Summary Report
+                           --------------------------
+
+Design:     SPI_Master
+Device:     XC2C256-6-TQ144
+Speed File: Version 14.0 Advance Product Specification
+Program:    Timing Report Generator:  version P.20131013
+Date:       Sun Jan 23 23:03:30 2022
+
+Performance Summary:
+
+Clock net 'NCS.Q' path delays:
+
+Clock to Setup (tCYC)                     :          4.7ns (1 macrocell levels)
+Clock to Q, net 'Out_clock.Q' to DFF Setup(D) at 'Out_clock.D'            (GCK)
+Target FF drives output net 'Out_clock.Q'
+
+                   Minimum Internal Clock Period(Tcyc): 4.7ns
+                     Maximum Internal Clock Speed: 212.7Mhz
+                            (Limited by Cycle Time)
+
+                      Minimum External Clock Period: 4.7ns
+            Maximum External Clock Speed (before divider): 212.7Mhz
+                            (Limited by Cycle Time)
+
+Clock net 'btn0' path delays:
+
+Clock Pad to Output Pad (tCO)             :         13.5ns (3 macrocell levels)
+Clock Pad 'btn0' to Output Pad 'MOSI'                             (Pterm Clock)
+
+Setup to Clock at the Pad (tSUF)          :          1.3ns (0 macrocell levels)
+Data signal 'Input_data<7>' to DFF D input Pin at 'XLXI_4/input_temp<7>.D'
+Clock pad 'btn0'                                                          (GCK)
+
+                   Minimum Internal Clock Period(Tcyc): 2.2ns
+                     Maximum Internal Clock Speed: 454.5Mhz
+                         (Limited by Clock Pulse Width)
+
+                      Minimum External Clock Period: 2.2ns
+            Maximum External Clock Speed (before divider): 454.5Mhz
+                         (Limited by Clock Pulse Width)
+
+Clock net 'Out_clock.Q' path delays:
+
+Clock to Setup (tCYC)                     :          4.7ns (1 macrocell levels)
+Clock to Q, net 'XLXI_4/buf_wej.Q' to DFF Setup(D) at 'Output_data<0>.D'        (GCK)
+Target FF drives output net 'Output_data<0>.Q'
+
+Setup to Clock at the Pad (tSUF)          :          1.6ns (0 macrocell levels)
+Data signal 'MISO' to DFF D input Pin at 'XLXI_4/buf_wej.D'
+Clock pad 'Out_clock.Q'                                                   (GCK)
+
+                   Minimum Internal Clock Period(Tcyc): 4.7ns
+                     Maximum Internal Clock Speed: 212.7Mhz
+                            (Limited by Cycle Time)
+
+                      Minimum External Clock Period: 4.7ns
+            Maximum External Clock Speed (before divider): 212.7Mhz
+                            (Limited by Cycle Time)
+
+--------------------------------------------------------------------------------
+                      Clock Pad to Output Pad (tCO) (nsec)
+
+\ From             b
+ \                 t
+  \                n
+   \               0
+    \               
+     \              
+      \             
+       \            
+        \           
+         \          
+          \         
+           \        
+            \       
+             \      
+  To          \------
+
+MOSI            13.5
+NCS              6.5
+Out_clock       10.0
+Output_data<0>  13.5
+Output_data<1>  13.5
+Output_data<2>  13.5
+Output_data<3>  13.5
+Output_data<4>  13.5
+Output_data<5>  13.5
+Output_data<6>  13.5
+Output_data<7>  13.5
+
+--------------------------------------------------------------------------------
+                   Setup to Clock at Pad (tSU or tSUF) (nsec)
+
+\ From            b
+ \                t
+  \               n
+   \              0
+    \              
+     \             
+      \            
+       \           
+        \          
+         \         
+          \        
+           \       
+            \      
+  To         \------
+
+Input_data<0>   1.3
+Input_data<1>   1.3
+Input_data<2>   1.3
+Input_data<3>   1.3
+Input_data<4>   1.3
+Input_data<5>   1.3
+Input_data<6>   1.3
+Input_data<7>   1.3
+
+--------------------------------------------------------------------------------
+                          Clock to Setup (tCYC) (nsec)
+                               (Clock: NCS_MC.Q)
+
+\ From          O
+ \              u
+  \             t
+   \            _
+    \           c
+     \          l
+      \         o
+       \        c
+        \       k
+         \      .
+          \     Q
+  To       \------
+
+Out_clock.D   4.7
+
+--------------------------------------------------------------------------------
+                          Clock to Setup (tCYC) (nsec)
+                            (Clock: Out_clock_MC.Q)
+
+\ From               X
+ \                   L
+  \                  X
+   \                 I
+    \                _
+     \               4
+      \              /
+       \             b
+        \            u
+         \           f
+          \          _
+           \         w
+            \        e
+             \       j
+              \      .
+               \     Q
+  To            \------
+
+Output_data<0>.D   4.7
+
+Path Type Definition: 
+
+Pad to Pad (tPD) -                        Reports pad to pad paths that start 
+                                          at input pads and end at output pads. 
+                                          Paths are not traced through 
+                                          registers. 
+
+Clock Pad to Output Pad (tCO) -           Reports paths that start at input 
+                                          pads trace through clock inputs of 
+                                          registers and end at output pads. 
+                                          Paths are not traced through PRE/CLR 
+                                          inputs of registers. 
+
+Setup to Clock at Pad (tSU or tSUF) -     Reports external setup time of data 
+                                          to clock at pad. Data path starts at 
+                                          an input pad and ends at register 
+                                          (Fast Input Register for tSUF) D/T 
+                                          input. Clock path starts at input pad 
+                                          and ends at the register clock input. 
+                                          Paths are not traced through 
+                                          registers. Pin-to-pin setup 
+                                          requirement is not reported or 
+                                          guaranteed for product-term clocks 
+                                          derived from macrocell feedback 
+                                          signals. 
+
+Clock to Setup (tCYC) -                   Register to register cycle time. 
+                                          Include source register tCO and 
+                                          destination register tSU. Note that 
+                                          when the computed Maximum Clock Speed 
+                                          is limited by tCYC it is computed 
+                                          assuming that all registers are 
+                                          rising-edge sensitive. 
+

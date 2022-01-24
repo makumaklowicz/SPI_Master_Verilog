@@ -1,0 +1,336 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Reading design: SPI_Master.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "SPI_Master.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "SPI_Master"
+Output Format                      : NGC
+Target Device                      : CoolRunner2 CPLDs
+
+---- Source Options
+Top Module Name                    : SPI_Master
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+
+---- Target Options
+Add IO Buffers                     : YES
+MACRO Preserve                     : YES
+XOR Preserve                       : YES
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Verilog 2001                       : YES
+
+---- Other Options
+Clock Enable                       : YES
+wysiwyg                            : NO
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "Register.v" in library work
+Compiling verilog file "Dzielnik_10000.v" in library work
+Module <Register> compiled
+Compiling verilog file "Automat.v" in library work
+Module <Dzielnik_10000> compiled
+Compiling verilog file "SPI_Master.vf" in library work
+Module <Automat> compiled
+Module <SPI_Master> compiled
+No errors in compilation
+Analysis of file <"SPI_Master.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <SPI_Master> in library <work>.
+
+Analyzing hierarchy for module <Dzielnik_10000> in library <work>.
+
+Analyzing hierarchy for module <Register> in library <work>.
+
+Analyzing hierarchy for module <Automat> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <SPI_Master>.
+Module <SPI_Master> is correct for synthesis.
+ 
+Analyzing module <Dzielnik_10000> in library <work>.
+Module <Dzielnik_10000> is correct for synthesis.
+ 
+Analyzing module <Register> in library <work>.
+Module <Register> is correct for synthesis.
+ 
+Analyzing module <Automat> in library <work>.
+Module <Automat> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Dzielnik_10000>.
+    Related source file is "Dzielnik_10000.v".
+    Found 1-bit register for signal <clock_state>.
+    Found 16-bit up counter for signal <counter>.
+    Found 16-bit adder for signal <old_counter_1$add0000> created at line 37.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <Dzielnik_10000> synthesized.
+
+
+Synthesizing Unit <Register>.
+    Related source file is "Register.v".
+    Found 1-bit register for signal <buf_wej>.
+    Found 1-bit register for signal <buf_wyj>.
+    Found 8-bit register for signal <input_temp>.
+    Found 8-bit register for signal <register>.
+    Found 1-bit register for signal <temp<31>>.
+    Summary:
+	inferred  11 D-type flip-flop(s).
+Unit <Register> synthesized.
+
+
+Synthesizing Unit <Automat>.
+    Related source file is "Automat.v".
+    Found 32-bit up counter for signal <counter>.
+    Found 33-bit comparator greatequal for signal <counter$cmp_ge0000> created at line 63.
+    Found 33-bit comparator less for signal <counter$cmp_lt0000> created at line 58.
+    Found 1-bit register for signal <cs_state1>.
+    Found 1-bit register for signal <cs_state2>.
+    Found 1-bit xor2 for signal <ncs$xor0000> created at line 80.
+    Found 1-bit register for signal <out_state>.
+    Found 1-bit register for signal <temp>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   3 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   1 Xor(s).
+Unit <Automat> synthesized.
+
+
+Synthesizing Unit <SPI_Master>.
+    Related source file is "SPI_Master.vf".
+Unit <SPI_Master> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 16-bit adder                                          : 1
+# Counters                                             : 2
+ 16-bit up counter                                     : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 16
+ 1-bit register                                        : 15
+ 8-bit register                                        : 1
+# Comparators                                          : 2
+ 33-bit comparator greatequal                          : 1
+ 33-bit comparator less                                : 1
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 16-bit adder                                          : 1
+# Counters                                             : 2
+ 16-bit up counter                                     : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 14
+ Flip-Flops                                            : 14
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <SPI_Master> ...
+
+Optimizing unit <Register> ...
+
+Optimizing unit <Dzielnik_10000> ...
+  implementation constraint: INIT=r	 : clock_state
+  implementation constraint: INIT=r	 : counter_14
+  implementation constraint: INIT=r	 : counter_15
+  implementation constraint: INIT=r	 : counter_7
+  implementation constraint: INIT=r	 : counter_8
+  implementation constraint: INIT=r	 : counter_9
+  implementation constraint: INIT=r	 : counter_10
+  implementation constraint: INIT=r	 : counter_11
+  implementation constraint: INIT=r	 : counter_12
+  implementation constraint: INIT=r	 : counter_13
+  implementation constraint: INIT=r	 : counter_6
+  implementation constraint: INIT=r	 : counter_5
+  implementation constraint: INIT=r	 : counter_4
+  implementation constraint: INIT=r	 : counter_3
+  implementation constraint: INIT=r	 : counter_2
+  implementation constraint: INIT=r	 : counter_1
+  implementation constraint: INIT=s	 : counter_0
+
+Optimizing unit <Automat> ...
+  implementation constraint: INIT=r	 : cs_state2
+  implementation constraint: INIT=s	 : out_state
+  implementation constraint: INIT=r	 : temp
+  implementation constraint: INIT=r	 : counter_31
+  implementation constraint: INIT=r	 : cs_state1
+  implementation constraint: INIT=r	 : counter_0
+  implementation constraint: INIT=r	 : counter_1
+  implementation constraint: INIT=r	 : counter_24
+  implementation constraint: INIT=r	 : counter_2
+  implementation constraint: INIT=r	 : counter_3
+  implementation constraint: INIT=r	 : counter_27
+  implementation constraint: INIT=r	 : counter_4
+  implementation constraint: INIT=r	 : counter_29
+  implementation constraint: INIT=r	 : counter_5
+  implementation constraint: INIT=r	 : counter_6
+  implementation constraint: INIT=r	 : counter_7
+  implementation constraint: INIT=r	 : counter_30
+  implementation constraint: INIT=r	 : counter_8
+  implementation constraint: INIT=r	 : counter_9
+  implementation constraint: INIT=r	 : counter_28
+  implementation constraint: INIT=r	 : counter_10
+  implementation constraint: INIT=r	 : counter_11
+  implementation constraint: INIT=r	 : counter_21
+  implementation constraint: INIT=r	 : counter_12
+  implementation constraint: INIT=r	 : counter_13
+  implementation constraint: INIT=r	 : counter_26
+  implementation constraint: INIT=r	 : counter_14
+  implementation constraint: INIT=r	 : counter_22
+  implementation constraint: INIT=r	 : counter_15
+  implementation constraint: INIT=r	 : counter_16
+  implementation constraint: INIT=r	 : counter_25
+  implementation constraint: INIT=r	 : counter_17
+  implementation constraint: INIT=r	 : counter_23
+  implementation constraint: INIT=r	 : counter_18
+  implementation constraint: INIT=r	 : counter_19
+  implementation constraint: INIT=r	 : counter_20
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : SPI_Master.ngr
+Top Level Output File Name         : SPI_Master
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : Yes
+Target Technology                  : CoolRunner2 CPLDs
+Macro Preserve                     : YES
+XOR Preserve                       : YES
+Clock Enable                       : YES
+wysiwyg                            : NO
+
+Design Statistics
+# IOs                              : 22
+
+Cell Usage :
+# BELS                             : 280
+#      AND2                        : 103
+#      AND3                        : 2
+#      AND4                        : 4
+#      AND8                        : 5
+#      GND                         : 2
+#      INV                         : 108
+#      OR2                         : 4
+#      OR4                         : 2
+#      OR8                         : 3
+#      XOR2                        : 47
+# FlipFlops/Latches                : 71
+#      FD                          : 35
+#      FDCE                        : 35
+#      FDD                         : 1
+# IO Buffers                       : 22
+#      IBUF                        : 11
+#      OBUF                        : 11
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.26 secs
+ 
+--> 
+
+Total memory usage is 4504236 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

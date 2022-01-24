@@ -1,0 +1,143 @@
+MODELDATA
+MODELDATA_VERSION "v1998.8"
+DESIGN "SPI_Master";
+
+/* port drive, load, max capacitance and max transition in data file */
+PORTDATA
+btn0: MAXTRANS(0.0);
+MISO: MAXTRANS(0.0);
+Input_data<0>: MAXTRANS(0.0);
+Input_data<1>: MAXTRANS(0.0);
+Input_data<2>: MAXTRANS(0.0);
+Input_data<3>: MAXTRANS(0.0);
+Input_data<4>: MAXTRANS(0.0);
+Input_data<5>: MAXTRANS(0.0);
+Input_data<6>: MAXTRANS(0.0);
+Input_data<7>: MAXTRANS(0.0);
+MOSI: MAXTRANS(0.0);
+NCS: MAXTRANS(0.0);
+Out_clock: MAXTRANS(0.0);
+Output_data<0>: MAXTRANS(0.0);
+Output_data<1>: MAXTRANS(0.0);
+Output_data<2>: MAXTRANS(0.0);
+Output_data<3>: MAXTRANS(0.0);
+Output_data<4>: MAXTRANS(0.0);
+Output_data<5>: MAXTRANS(0.0);
+Output_data<6>: MAXTRANS(0.0);
+Output_data<7>: MAXTRANS(0.0);
+ENDPORTDATA
+
+/* timing arc data */
+TIMINGDATA
+
+ARCDATA
+btn0_MOSI_delay:
+CELL_RISE(scalar) {
+  VALUES("13.5");
+}
+CELL_FALL(scalar) {
+  VALUES("13.5");
+}
+ENDARCDATA
+
+ARCDATA
+btn0_NCS_delay:
+CELL_RISE(scalar) {
+  VALUES("6.5");
+}
+CELL_FALL(scalar) {
+  VALUES("6.5");
+}
+ENDARCDATA
+
+ARCDATA
+btn0_Out_clock_delay:
+CELL_RISE(scalar) {
+  VALUES("10");
+}
+CELL_FALL(scalar) {
+  VALUES("10");
+}
+ENDARCDATA
+
+ARCDATA
+btn0_Output_data<0>_delay:
+CELL_RISE(scalar) {
+  VALUES("13.5");
+}
+CELL_FALL(scalar) {
+  VALUES("13.5");
+}
+ENDARCDATA
+
+ARCDATA
+btn0_Output_data<1>_delay:
+CELL_RISE(scalar) {
+  VALUES("13.5");
+}
+CELL_FALL(scalar) {
+  VALUES("13.5");
+}
+ENDARCDATA
+
+ARCDATA
+btn0_Output_data<2>_delay:
+CELL_RISE(scalar) {
+  VALUES("13.5");
+}
+CELL_FALL(scalar) {
+  VALUES("13.5");
+}
+ENDARCDATA
+
+ARCDATA
+btn0_Output_data<3>_delay:
+CELL_RISE(scalar) {
+  VALUES("13.5");
+}
+CELL_FALL(scalar) {
+  VALUES("13.5");
+}
+ENDARCDATA
+
+ARCDATA
+btn0_Output_data<4>_delay:
+CELL_RISE(scalar) {
+  VALUES("13.5");
+}
+CELL_FALL(scalar) {
+  VALUES("13.5");
+}
+ENDARCDATA
+
+ARCDATA
+btn0_Output_data<5>_delay:
+CELL_RISE(scalar) {
+  VALUES("13.5");
+}
+CELL_FALL(scalar) {
+  VALUES("13.5");
+}
+ENDARCDATA
+
+ARCDATA
+btn0_Output_data<6>_delay:
+CELL_RISE(scalar) {
+  VALUES("13.5");
+}
+CELL_FALL(scalar) {
+  VALUES("13.5");
+}
+ENDARCDATA
+
+ARCDATA
+btn0_Output_data<7>_delay:
+CELL_RISE(scalar) {
+  VALUES("13.5");
+}
+CELL_FALL(scalar) {
+  VALUES("13.5");
+}
+ENDARCDATA
+
+ENDMODELDATA

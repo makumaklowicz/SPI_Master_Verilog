@@ -1,0 +1,5 @@
+# begin LFP file C:\Users\miste\Desktop\Verilog_SPI\SPI_Master\SPI_Master.lfp
+designfile SPI_Master.v
+parttype xc2c256-tq144-6
+bus_delimiter 0;
+set_busdelim_onsave 1;

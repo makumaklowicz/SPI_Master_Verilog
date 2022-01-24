@@ -1,0 +1,8 @@
+vhdtdtfi -lib work C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Register.v -lang verilog -prj SPI_Master -o Register.spl -module Register -template E:/Programy/ISE/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr Register.spl C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Register.sym 
+vhdtdtfi -lib work C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Register.v -lang verilog -prj SPI_Master -o Register.spl -module Register -template E:/Programy/ISE/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr Register.spl C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Register.sym 
+vhdtdtfi -lib work C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Register.v -lang verilog -prj SPI_Master -o Register.spl -module Register -template E:/Programy/ISE/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr Register.spl C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Register.sym 
+vhdtdtfi -lib work C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Register.v -lang verilog -prj SPI_Master -o Register.spl -module Register -template E:/Programy/ISE/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr Register.spl C:/Users/miste/Desktop/Verilog_SPI/SPI_Master/Register.sym 
